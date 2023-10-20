@@ -5,7 +5,7 @@ import java.util.Objects;
 
 @Entity
 @Table(name="countries")
-public class Country {
+public class Dog {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
@@ -13,10 +13,10 @@ public class Country {
     private String name;
     private String language;
 
-    public Country() {
+    public Dog() {
     }
 
-    public Country(Long id, String name, String language) {
+    public Dog(Long id, String name, String language) {
         this.id = id;
         this.name = name;
         this.language = language;
@@ -66,7 +66,7 @@ public class Country {
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final Country other = (Country) obj;
+        final Dog other = (Dog) obj;
         if (!Objects.equals(this.language, other.language)) {
             return false;
         }

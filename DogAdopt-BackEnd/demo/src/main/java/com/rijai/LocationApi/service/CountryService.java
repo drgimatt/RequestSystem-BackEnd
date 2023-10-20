@@ -1,6 +1,6 @@
 package com.rijai.LocationApi.service;
 
-import com.rijai.LocationApi.model.Country;
+import com.rijai.LocationApi.model.Dog;
 import com.rijai.LocationApi.repository.CountryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -13,24 +13,24 @@ public class CountryService implements ICountryService {
     @Autowired
     private CountryRepository repository;
 
-    public List<Country> getCountries() {
-        return (List<Country>) repository.findAll();
+    public List<Dog> getCountries() {
+        return (List<Dog>) repository.findAll();
     }
 
-    public Country getCountry(Long id) {
+    public Dog getCountry(Long id) {
         Optional optional=repository.findById(id);
         if(optional.isEmpty())
             return null;
         else
-            return (Country) optional.get();
+            return (Dog) optional.get();
     }
 
-    public Country addCountry(Country country) {
+    public Dog addCountry(Dog country) {
         return repository.save(country);
     }
 
-    public Country updateCountry(Long id, Country country) {
-        Optional<Country> existingCountry = repository.findById(id);
+    public Dog updateCountry(Long id, Dog country) {
+        Optional<Dog> existingCountry = repository.findById(id);
         if(existingCountry.isPresent()) {
             return repository.save(country);
         }
@@ -40,19 +40,19 @@ public class CountryService implements ICountryService {
 
     public void deleteUser(Long id)
     {
-        Optional<Country> country = repository.findById(id);
+        Optional<Dog> country = repository.findById(id);
         if(country.isPresent()) {
             repository.delete(country.get());
         }
     }
 
     public void deleteCountry(Long id) {
-        Optional<Country> country = repository.findById(id);
+        Optional<Dog> country = repository.findById(id);
         country.ifPresent(value -> repository.delete(value));
     }
 
-    public Country findById(Long id) {
-        Optional<Country> country = repository.findById(id);
+    public Dog findById(Long id) {
+        Optional<Dog> country = repository.findById(id);
         return country.orElse(null);
     }
 
