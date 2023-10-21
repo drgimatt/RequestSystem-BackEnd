@@ -1,6 +1,6 @@
-/Users/altheacruz/Desktop/IT192/M3/EX6/new/my-backend/demo/src/main/java/com/rijai/LocationApi/repository/CountryRepository.java
-/Users/altheacruz/Desktop/IT192/M3/EX6/new/my-backend/demo/src/main/java/com/rijai/LocationApi/service/ICountryService.java
-/Users/altheacruz/Desktop/IT192/M3/EX6/new/my-backend/demo/src/main/java/com/rijai/LocationApi/controller/MyController.java
-/Users/altheacruz/Desktop/IT192/M3/EX6/new/my-backend/demo/src/main/java/com/rijai/LocationApi/service/CountryService.java
-/Users/altheacruz/Desktop/IT192/M3/EX6/new/my-backend/demo/src/main/java/com/rijai/LocationApi/model/Country.java
-/Users/altheacruz/Desktop/IT192/M3/EX6/new/my-backend/demo/src/main/java/com/rijai/LocationApi/DemoApplication.java
+/Users/altheacruz/Desktop/IT192/M3-PROJECT/DogAdopt-BackEnd/demo/src/main/java/com/rijai/LocationApi/model/Dog.java
+/Users/altheacruz/Desktop/IT192/M3-PROJECT/DogAdopt-BackEnd/demo/src/main/java/com/rijai/LocationApi/DemoApplication.java
+/Users/altheacruz/Desktop/IT192/M3-PROJECT/DogAdopt-BackEnd/demo/src/main/java/com/rijai/LocationApi/repository/DogRepository.java
+/Users/altheacruz/Desktop/IT192/M3-PROJECT/DogAdopt-BackEnd/demo/src/main/java/com/rijai/LocationApi/controller/DogController.java
+/Users/altheacruz/Desktop/IT192/M3-PROJECT/DogAdopt-BackEnd/demo/src/main/java/com/rijai/LocationApi/service/IDogService.java
+/Users/altheacruz/Desktop/IT192/M3-PROJECT/DogAdopt-BackEnd/demo/src/main/java/com/rijai/LocationApi/service/DogService.java
