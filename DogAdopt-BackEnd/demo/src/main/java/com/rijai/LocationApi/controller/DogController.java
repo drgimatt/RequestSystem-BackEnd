@@ -3,6 +3,8 @@ package com.rijai.LocationApi.controller;
 import com.rijai.LocationApi.model.Dog;
 import com.rijai.LocationApi.service.IDogService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -15,7 +17,7 @@ public class DogController {
     private IDogService dogService;
 
 
-    @RequestMapping("/api/dogs")
+    @RequestMapping("/api/dashboard")
     public List<Dog> findDogs(){
        return dogService.getDogs();
     }
@@ -39,5 +41,7 @@ public class DogController {
         dogService.deleteDog(id);
         return "redirect:/dogs";
     }
+
+
 
 }

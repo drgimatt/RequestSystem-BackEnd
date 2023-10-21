@@ -138,7 +138,8 @@ public class Dog {
         final StringBuilder sb = new StringBuilder("Country{");
         sb.append("id=").append(id);
         sb.append(", name='").append(name).append('\'');
-        sb.append(", breed='").append(name).append('\'');
+        sb.append(", photo='").append(photo).append('\'');
+        sb.append(", breed='").append(breed).append('\'');
         sb.append(", age (in months)=").append(age);
         sb.append(", date of arrival=").append(doa);
         sb.append(", personality=").append(personality);
