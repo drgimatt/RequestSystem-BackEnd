@@ -16,22 +16,22 @@ public class DogController {
 
 
     @RequestMapping("/api/dogs")
-    public List<Dog> findCountries(){
+    public List<Dog> findDogs(){
        return dogService.getDogs();
     }
 
     @RequestMapping(value = "/api/show-dog/{id}")
-    public Dog showCountry(@PathVariable Long id) {
+    public Dog showDog(@PathVariable Long id) {
        return dogService.getDog(id);
     }
 
     @RequestMapping(value="/api/add-dog", method= RequestMethod.POST)
-    public Dog addCountrySubmit(@RequestBody Dog country) {
+    public Dog addDogSubmit(@RequestBody Dog country) {
         return dogService.addDog(country);
     }
 
     @RequestMapping(value="/api/update-dog/{id}", method=RequestMethod.PUT)
-    public Dog updateCountry(@PathVariable Long id, @RequestBody Dog dog) {
+    public Dog updateDog(@PathVariable Long id, @RequestBody Dog dog) {
         return dogService.updateDog(id, dog);
     }
     @RequestMapping(value = "/api/delete-dog/{id}", method = {RequestMethod.DELETE, RequestMethod.POST})
