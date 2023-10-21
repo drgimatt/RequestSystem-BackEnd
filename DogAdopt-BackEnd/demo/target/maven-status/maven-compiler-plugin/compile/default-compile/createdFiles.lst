@@ -1,0 +1,4 @@
+com/rijai/LocationApi/service/IDogService.class
+com/rijai/LocationApi/controller/DogController.class
+com/rijai/LocationApi/service/DogService.class
+com/rijai/LocationApi/repository/DogRepository.class

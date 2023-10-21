@@ -11,6 +11,7 @@ public class Dog {
     @GeneratedValue(strategy = GenerationType.AUTO)
     
     private Long id;
+    private String photo;
     private String name;
     private int age;
     private Date doa;
@@ -20,6 +21,7 @@ public class Dog {
     }
     public Dog(Long id, String name, int age, Date doa, String personality) {
         this.id = id;
+        this.photo = photo;
         this.name = name;
         this.age = age;
         this.doa = doa;
@@ -32,6 +34,14 @@ public class Dog {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public String getPhoto() {
+        return photo;
+    }
+
+    public void setPhoto(String photo) {
+        this.photo = photo;
     }
 
     public String getName() {
@@ -70,6 +80,7 @@ public class Dog {
     public int hashCode() {
         int hash = 7;
         hash = 79 * hash + Objects.hashCode(this.id);
+        hash = 79 * hash + Objects.hashCode(this.photo);
         hash = 79 * hash + Objects.hashCode(this.name);
         hash = 79 * hash + Objects.hashCode(this.age);
         hash = 79 * hash + Objects.hashCode(this.doa);
@@ -89,6 +100,9 @@ public class Dog {
             return false;
         }
         final Dog other = (Dog) obj;
+        if (!Objects.equals(this.photo, other.photo)) {
+            return false;
+        }
         if (!Objects.equals(this.name, other.name)) {
             return false;
         }
