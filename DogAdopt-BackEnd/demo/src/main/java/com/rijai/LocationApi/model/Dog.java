@@ -2,24 +2,28 @@ package com.rijai.LocationApi.model;
 
 import javax.persistence.*;
 import java.util.Objects;
+import java.sql.Date;
 
 @Entity
-@Table(name="countries")
+@Table(name="dogs")
 public class Dog {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    
     private Long id;
-
     private String name;
-    private String language;
+    private int age;
+    private Date doa;
+    private String personality;
 
     public Dog() {
     }
-
-    public Dog(Long id, String name, String language) {
+    public Dog(Long id, String name, int age, Date doa, String personality) {
         this.id = id;
         this.name = name;
-        this.language = language;
+        this.age = age;
+        this.doa = doa;
+        this.personality = personality;
     }
 
     public Long getId() {
@@ -38,12 +42,28 @@ public class Dog {
         this.name = name;
     }
 
-    public String getLanguage() {
-        return language;
+    public int getAge() {
+        return age;
     }
 
-    public void setLanguage(String language) {
-        this.language = language;
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public Date getDoa() {
+        return doa;
+    }
+
+    public void setDoa(Date doa) {
+        this.doa = doa;
+    }
+
+    public String getPersonality() {
+        return personality;
+    }
+
+    public void setPersonality(String personality) {
+        this.personality = personality;
     }
 
     @Override
@@ -51,7 +71,9 @@ public class Dog {
         int hash = 7;
         hash = 79 * hash + Objects.hashCode(this.id);
         hash = 79 * hash + Objects.hashCode(this.name);
-        hash = 79 * hash + Objects.hashCode(this.language);
+        hash = 79 * hash + Objects.hashCode(this.age);
+        hash = 79 * hash + Objects.hashCode(this.doa);
+        hash = 79 * hash + Objects.hashCode(this.personality);
         return hash;
     }
 
@@ -67,10 +89,16 @@ public class Dog {
             return false;
         }
         final Dog other = (Dog) obj;
-        if (!Objects.equals(this.language, other.language)) {
+        if (!Objects.equals(this.name, other.name)) {
             return false;
         }
-        if (!Objects.equals(this.name, other.name)) {
+        if (!Objects.equals(this.age, other.age)) {
+            return false;
+        }
+        if (!Objects.equals(this.doa, other.doa)) {
+            return false;
+        }
+        if (!Objects.equals(this.personality, other.personality)) {
             return false;
         }
         return Objects.equals(this.id, other.id);
@@ -81,7 +109,9 @@ public class Dog {
         final StringBuilder sb = new StringBuilder("Country{");
         sb.append("id=").append(id);
         sb.append(", name='").append(name).append('\'');
-        sb.append(", language=").append(language);
+        sb.append(", age (in months)=").append(age);
+        sb.append(", date of arrival=").append(doa);
+        sb.append(", personality=").append(personality);
         sb.append('}');
         return sb.toString();
     }
