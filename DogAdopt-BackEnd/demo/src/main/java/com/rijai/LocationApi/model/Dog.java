@@ -13,16 +13,19 @@ public class Dog {
     private Long id;
     private String photo;
     private String name;
+    private String breed;
     private int age;
     private Date doa;
     private String personality;
 
     public Dog() {
     }
-    public Dog(Long id, String name, int age, Date doa, String personality) {
+
+    public Dog(Long id, String photo, String name, String breed, int age, Date doa, String personality) {
         this.id = id;
         this.photo = photo;
         this.name = name;
+        this.breed = breed;
         this.age = age;
         this.doa = doa;
         this.personality = personality;
@@ -50,6 +53,14 @@ public class Dog {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getBreed() {
+        return breed;
+    }
+
+    public void setBreed(String breed) {
+        this.breed = breed;
     }
 
     public int getAge() {
@@ -82,6 +93,7 @@ public class Dog {
         hash = 79 * hash + Objects.hashCode(this.id);
         hash = 79 * hash + Objects.hashCode(this.photo);
         hash = 79 * hash + Objects.hashCode(this.name);
+        hash = 79 * hash + Objects.hashCode(this.breed);
         hash = 79 * hash + Objects.hashCode(this.age);
         hash = 79 * hash + Objects.hashCode(this.doa);
         hash = 79 * hash + Objects.hashCode(this.personality);
@@ -106,6 +118,9 @@ public class Dog {
         if (!Objects.equals(this.name, other.name)) {
             return false;
         }
+        if (!Objects.equals(this.breed, other.breed)) {
+            return false;
+        }
         if (!Objects.equals(this.age, other.age)) {
             return false;
         }
@@ -123,6 +138,7 @@ public class Dog {
         final StringBuilder sb = new StringBuilder("Country{");
         sb.append("id=").append(id);
         sb.append(", name='").append(name).append('\'');
+        sb.append(", breed='").append(name).append('\'');
         sb.append(", age (in months)=").append(age);
         sb.append(", date of arrival=").append(doa);
         sb.append(", personality=").append(personality);

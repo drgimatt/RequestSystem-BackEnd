@@ -26,8 +26,8 @@ public class DogController {
     }
 
     @RequestMapping(value="/api/add-dog", method= RequestMethod.POST)
-    public Dog addDogSubmit(@RequestBody Dog country) {
-        return dogService.addDog(country);
+    public Dog addDogSubmit(@RequestBody Dog dog) {
+        return dogService.addDog(dog);
     }
 
     @RequestMapping(value="/api/update-dog/{id}", method=RequestMethod.PUT)
@@ -37,7 +37,7 @@ public class DogController {
     @RequestMapping(value = "/api/delete-dog/{id}", method = {RequestMethod.DELETE, RequestMethod.POST})
     public String deleteDog(@PathVariable("id") Long id) {
         dogService.deleteDog(id);
-        return "redirect:/countries";
+        return "redirect:/dogs";
     }
 
 }
