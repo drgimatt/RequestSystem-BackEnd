@@ -1,8 +1,8 @@
 package com.rijai.LocationApi.model;
 
 import javax.persistence.*;
-import java.util.Objects;
 import java.sql.Date;
+import java.util.Objects;
 
 @Entity
 @Table(name="dogs")
@@ -11,17 +11,19 @@ public class Dog {
     @GeneratedValue(strategy = GenerationType.AUTO)
     
     private Long id;
-    private String photo;
+    @Lob
+    private byte[] photo;
     private String name;
     private String breed;
     private int age;
     private Date doa;
     private String personality;
+    private String status;
 
     public Dog() {
     }
 
-    public Dog(Long id, String photo, String name, String breed, int age, Date doa, String personality) {
+    public Dog(Long id, byte[] photo, String name, String breed, int age, Date doa, String personality, String status) {
         this.id = id;
         this.photo = photo;
         this.name = name;
@@ -29,6 +31,7 @@ public class Dog {
         this.age = age;
         this.doa = doa;
         this.personality = personality;
+        this.status = status;
     }
 
     public Long getId() {
@@ -39,11 +42,11 @@ public class Dog {
         this.id = id;
     }
 
-    public String getPhoto() {
+    public byte[] getPhoto() {
         return photo;
     }
 
-    public void setPhoto(String photo) {
+    public void setPhoto(byte[] photo) {
         this.photo = photo;
     }
 
@@ -85,6 +88,14 @@ public class Dog {
 
     public void setPersonality(String personality) {
         this.personality = personality;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 
     @Override
