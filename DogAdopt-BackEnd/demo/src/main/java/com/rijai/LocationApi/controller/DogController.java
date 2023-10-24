@@ -1,6 +1,8 @@
 package com.rijai.LocationApi.controller;
 
 import com.rijai.LocationApi.model.Dog;
+import com.rijai.LocationApi.model.Account;
+import com.rijai.LocationApi.service.IAccountService;
 import com.rijai.LocationApi.service.IDogService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -16,7 +18,7 @@ import java.util.List;
 public class DogController {
     @Autowired
     private IDogService dogService;
-
+    private IAccountService accountService;
 
     @RequestMapping("/api/dogs")
     public List<Dog> findDogs(){
