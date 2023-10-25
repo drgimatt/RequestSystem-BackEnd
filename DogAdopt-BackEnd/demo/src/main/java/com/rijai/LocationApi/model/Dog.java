@@ -19,11 +19,12 @@ public class Dog {
     private Date doa;
     private String personality;
     private String status;
+    private String gender;
 
     public Dog() {
     }
 
-    public Dog(Long id, byte[] photo, String name, String breed, int age, Date doa, String personality, String status) {
+    public Dog(Long id, byte[] photo, String name, String breed, int age, Date doa, String personality, String status, String gender) {
         this.id = id;
         this.photo = photo;
         this.name = name;
@@ -32,6 +33,7 @@ public class Dog {
         this.doa = doa;
         this.personality = personality;
         this.status = status;
+        this.gender = gender;
     }
 
     public Long getId() {
@@ -97,6 +99,15 @@ public class Dog {
     public void setStatus(String status) {
         this.status = status;
     }
+    
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
 
     @Override
     public int hashCode() {
@@ -108,6 +119,7 @@ public class Dog {
         hash = 79 * hash + Objects.hashCode(this.age);
         hash = 79 * hash + Objects.hashCode(this.doa);
         hash = 79 * hash + Objects.hashCode(this.personality);
+        hash = 79 * hash + Objects.hashCode(this.gender);
         return hash;
     }
 
@@ -141,6 +153,9 @@ public class Dog {
         if (!Objects.equals(this.personality, other.personality)) {
             return false;
         }
+        if (!Objects.equals(this.gender, other.gender)) {
+            return false;
+        }
         return Objects.equals(this.id, other.id);
     }
 
@@ -154,6 +169,7 @@ public class Dog {
         sb.append(", age (in months)=").append(age);
         sb.append(", date of arrival=").append(doa);
         sb.append(", personality=").append(personality);
+        sb.append(", gender=").append(gender);
         sb.append('}');
         return sb.toString();
     }

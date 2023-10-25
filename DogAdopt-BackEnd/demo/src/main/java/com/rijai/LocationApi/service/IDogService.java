@@ -1,6 +1,5 @@
 package com.rijai.LocationApi.service;
 
-import com.rijai.LocationApi.model.Account;
 import com.rijai.LocationApi.model.Dog;
 
 import java.util.List;
