@@ -38,9 +38,17 @@ public class DogService implements IDogService {
             return null;
     }
 
-    public void deleteDog(Long id) {
+    public void deleto(Long id) {
         Optional<Dog> dog = repository.findById(id);
         dog.ifPresent(value -> repository.delete(value));
     }
+
+    public void deleteDog(Long id)
+    {
+        Optional<Dog> dog = repository.findById(id);
+        if(dog.isPresent()) {
+            repository.delete(dog.get());
+        }
+    }    
 
 }
