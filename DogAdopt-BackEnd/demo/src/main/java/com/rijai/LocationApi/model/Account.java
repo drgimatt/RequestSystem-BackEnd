@@ -7,7 +7,6 @@ import java.util.Objects;
 @Table(name="accounts")
 public class Account {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
 
     private Long myId;
     private String firstName;
@@ -92,6 +91,7 @@ public class Account {
         hash = 79 * hash + Objects.hashCode(this.myId);
         hash = 79 * hash + Objects.hashCode(this.firstName);
         hash = 79 * hash + Objects.hashCode(this.lastName);
+        hash = 79 * hash + Objects.hashCode(this.myAddress);
         hash = 79 * hash + Objects.hashCode(this.username);
         hash = 79 * hash + Objects.hashCode(this.password);
         hash = 79 * hash + Objects.hashCode(this.role);
@@ -134,13 +134,13 @@ public class Account {
     @Override
     public String toString() {
         final StringBuilder sb = new StringBuilder("Account {");
-        sb.append("id = ").append(myId);
-        sb.append(", first name = ").append(firstName).append('\'');
-        sb.append(", last name = ").append(lastName).append('\'');
-        sb.append(", address = ").append(myAddress).append('\'');
-        sb.append(", username = ").append(username).append('\'');
-        sb.append(", password = ").append(password).append('\'');
-        sb.append(", role = ").append(role);
+        sb.append(" myId=").append(myId);
+        sb.append(", firstName=").append(firstName).append('\'');
+        sb.append(", lastName=").append(lastName).append('\'');
+        sb.append(", myAddress=").append(myAddress).append('\'');
+        sb.append(", username=").append(username).append('\'');
+        sb.append(", password=").append(password).append('\'');
+        sb.append(", role=").append(role);
         sb.append('}');
         return sb.toString();
     }
