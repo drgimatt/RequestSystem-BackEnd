@@ -2,6 +2,9 @@ package com.rijai.LocationApi.controller;
 
 import com.rijai.LocationApi.model.Account;
 import com.rijai.LocationApi.service.IAccountService;
+
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -11,6 +14,12 @@ import org.springframework.web.bind.annotation.*;
 public class AccountController {
     @Autowired
     private IAccountService accountService;
+
+
+    @RequestMapping(value="/api/users/{username}/{password}", method= RequestMethod.GET)
+    public Account requestAccount(@PathVariable Map<String, String> pathVarsMap) {
+        return accountService.doesUserExist(pathVarsMap.get("username"), pathVarsMap.get("password"));
+    }
 
     @RequestMapping(value="/api/create-account", method= RequestMethod.POST)
     public Account createAccount(@RequestBody Account account) {

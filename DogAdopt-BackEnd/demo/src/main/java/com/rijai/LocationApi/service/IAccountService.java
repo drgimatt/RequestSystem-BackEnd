@@ -8,6 +8,7 @@ import java.util.List;
 public interface IAccountService {
 
     List<Account> findAll();
+    Account doesUserExist(String username, String password);
     Account createAccount(Account account);
     Account updateAccount(Long id, Account account);
     void deleteAccount(Long id);

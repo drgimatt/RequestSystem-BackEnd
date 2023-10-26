@@ -2,16 +2,38 @@ package com.rijai.LocationApi.service;
 
 import com.rijai.LocationApi.model.Account;
 import com.rijai.LocationApi.repository.AccountRepository;
+
+import org.hibernate.NonUniqueResultException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
+import javax.persistence.EntityManager;
+import javax.persistence.NoResultException;
+import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
+import javax.persistence.TypedQuery;
+
 @Service
 public class AccountService implements IAccountService {
     @Autowired
     private AccountRepository accountRepository;
+    @PersistenceContext
+    private EntityManager em;
+
+    public Account doesUserExist(String username, String password) {
+        TypedQuery<Account> query = em.createQuery("SELECT u FROM Account u WHERE u.username = :username AND u.password = :password", Account.class);
+        query.setParameter("username", username);
+        query.setParameter("password", password);
+
+        try {
+            return query.getSingleResult();
+        } catch (NoResultException | NonUniqueResultException e) {
+            return null;
+        }
+    }
 
     public List<Account> findAll() {
         return (List<Account>) accountRepository.findAll();
