@@ -7,6 +7,7 @@ import java.util.Objects;
 @Table(name="accounts")
 public class Account {
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
 
     private Long myId;
     private String firstName;
