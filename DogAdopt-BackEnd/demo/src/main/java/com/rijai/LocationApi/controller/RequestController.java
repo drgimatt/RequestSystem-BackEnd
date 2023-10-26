@@ -19,7 +19,7 @@ public class RequestController {
         return requestService.getRequests();
     }
     @RequestMapping(value="/api/create-request", method= RequestMethod.POST)
-    public Request createAccount(@RequestBody Request request) {
+    public Request createRequest(@RequestBody Request request) {
         return requestService.createRequest(request);
     }
 

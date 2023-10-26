@@ -14,6 +14,7 @@ public class Request {
     @ManyToOne
     @JoinColumn(name = "dogId", referencedColumnName = "id")
     private Dog dog;
+
     private String reqName;
     private String reqContact;
     private String reqMessage;
