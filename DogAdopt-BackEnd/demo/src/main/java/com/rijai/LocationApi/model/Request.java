@@ -12,20 +12,25 @@ public class Request {
 
     private Long dogId;
 
+    private Long userId;
+
     private String reqName;
     private String reqContact;
     private String reqMessage;
+    private String reqStatus;
 
     public Request() {
     }
 
-    public Request(Long reqId, Long dogId, String reqName, String reqContact, String reqMessage) {
+    public Request(Long reqId, Long dogId, Long userId, String reqName, String reqContact, String reqMessage, String reqStatus) {
         this.reqId = reqId;
         this.dogId = dogId;
+        this.userId = userId;
         this.reqName = reqName;
         this.reqContact = reqContact;
         this.reqMessage = reqMessage;
-    }   
+        this.reqStatus = reqStatus;
+    }
 
     public Long getDogId() {
         return dogId;
@@ -59,14 +64,32 @@ public class Request {
         this.reqMessage = reqMessage;
     }
 
+    public Long getUserId() {
+        return userId;
+    }
+
+    public void setUserId(Long userId) {
+        this.userId = userId;
+    }
+
+    public String getReqStatus() {
+        return reqStatus;
+    }
+
+    public void setReqStatus(String reqStatus) {
+        this.reqStatus = reqStatus;
+    }
+
     @Override
     public int hashCode() {
         int hash = 7;
         hash = 79 * hash + Objects.hashCode(this.reqId);
         hash = 79 * hash + Objects.hashCode(this.dogId);
+        hash = 79 * hash + Objects.hashCode(this.userId);
         hash = 79 * hash + Objects.hashCode(this.reqName);
         hash = 79 * hash + Objects.hashCode(this.reqContact);
         hash = 79 * hash + Objects.hashCode(this.reqMessage);
+        hash = 79 * hash + Objects.hashCode(this.reqStatus);
         return hash;
     }
 
@@ -82,6 +105,9 @@ public class Request {
             return false;
         }
         final Request other = (Request) obj;
+        if (!Objects.equals(this.reqStatus, other.reqStatus)) {
+            return false;
+        }
         if (!Objects.equals(this.reqMessage, other.reqMessage)) {
             return false;
         }
@@ -89,6 +115,9 @@ public class Request {
             return false;
         }
         if (!Objects.equals(this.reqName, other.reqName)) {
+            return false;
+        }
+        if (!Objects.equals(this.userId, other.userId)) {
             return false;
         }
         if (!Objects.equals(this.dogId, other.dogId)) {
@@ -102,9 +131,11 @@ public class Request {
         final StringBuilder sb = new StringBuilder("Request {");
         sb.append("id=").append(reqId);
         sb.append(", dog=").append(dogId);
+        sb.append(", userid=").append(userId);
         sb.append(", name='").append(reqName).append('\'');
         sb.append(", contact='").append(reqContact).append('\'');
         sb.append(", message=").append(reqMessage);
+        sb.append(", status=").append(reqStatus);
         sb.append('}');
         return sb.toString();
     }
