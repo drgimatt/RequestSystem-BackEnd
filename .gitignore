@@ -12,3 +12,6 @@ DogAdopt-BackEnd/demo/target/maven-status/maven-compiler-plugin/testCompile/defa
 DogAdopt-BackEnd/demo/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst
 DogAdopt-BackEnd/demo/src/main/resources/application.properties
 DogAdopt-BackEnd/demo/target/classes/application.properties
+DogAdopt-BackEnd/demo/target/classes/application.properties
+DogAdopt-BackEnd/demo/src/main/resources/application.properties
+DogAdopt-BackEnd/demo/target/classes/application.properties
