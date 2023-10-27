@@ -1,7 +1,6 @@
 package com.rijai.LocationApi.model;
 
 import javax.persistence.*;
-import java.sql.Date;
 import java.util.Objects;
 
 @Entity
@@ -9,11 +8,9 @@ import java.util.Objects;
 public class Request {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-
     private Long reqId;
-    @ManyToOne
-    @JoinColumn(name = "dogId", referencedColumnName = "id")
-    private Dog dog;
+
+    private Long dogId;
 
     private String reqName;
     private String reqContact;
@@ -22,28 +19,20 @@ public class Request {
     public Request() {
     }
 
-    public Request(Long reqId, Dog dog, String reqName, String reqContact, String reqMessage) {
+    public Request(Long reqId, Long dogId, String reqName, String reqContact, String reqMessage) {
         this.reqId = reqId;
-        this.dog = dog;
+        this.dogId = dogId;
         this.reqName = reqName;
         this.reqContact = reqContact;
         this.reqMessage = reqMessage;
+    }   
+
+    public Long getDogId() {
+        return dogId;
     }
 
-    public Long getReqId() {
-        return reqId;
-    }
-
-    public void setReqId(Long reqId) {
-        this.reqId = reqId;
-    }
-
-    public Dog getDog() {
-        return dog;
-    }
-
-    public void setDog(Dog dog) {
-        this.dog = dog;
+    public void setDogId(Long dogId) {
+        this.dogId = dogId;
     }
 
     public String getReqName() {
@@ -74,7 +63,7 @@ public class Request {
     public int hashCode() {
         int hash = 7;
         hash = 79 * hash + Objects.hashCode(this.reqId);
-        hash = 79 * hash + Objects.hashCode(this.dog);
+        hash = 79 * hash + Objects.hashCode(this.dogId);
         hash = 79 * hash + Objects.hashCode(this.reqName);
         hash = 79 * hash + Objects.hashCode(this.reqContact);
         hash = 79 * hash + Objects.hashCode(this.reqMessage);
@@ -102,7 +91,7 @@ public class Request {
         if (!Objects.equals(this.reqName, other.reqName)) {
             return false;
         }
-        if (!Objects.equals(this.dog, other.dog)) {
+        if (!Objects.equals(this.dogId, other.dogId)) {
             return false;
         }
         return Objects.equals(this.reqId, other.reqId);
@@ -112,12 +101,22 @@ public class Request {
     public String toString() {
         final StringBuilder sb = new StringBuilder("Request {");
         sb.append("id=").append(reqId);
-        sb.append(", dog=").append(dog != null ? dog.getId() : "null");
+        sb.append(", dog=").append(dogId);
         sb.append(", name='").append(reqName).append('\'');
         sb.append(", contact='").append(reqContact).append('\'');
         sb.append(", message=").append(reqMessage);
         sb.append('}');
         return sb.toString();
     }
+
+    public Long getReqId() {
+        return reqId;
+    }
+
+    public void setReqId(Long reqId) {
+        this.reqId = reqId;
+    }
+
+
 
 }

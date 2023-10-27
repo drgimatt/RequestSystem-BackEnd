@@ -1,6 +1,5 @@
 package com.rijai.LocationApi.service;
 
-import com.rijai.LocationApi.model.Dog;
 import com.rijai.LocationApi.model.Request;
 import com.rijai.LocationApi.repository.RequestRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,7 +19,7 @@ public class RequestService implements IRequestService {
 
     @Override
     public Request getRequest(Long id) {
-        Optional optional=requestRepository.findById(id);
+        Optional<Request> optional=requestRepository.findById(id);
         if(optional.isEmpty())
             return null;
         else

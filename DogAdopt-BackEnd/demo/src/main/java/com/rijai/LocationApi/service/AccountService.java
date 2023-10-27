@@ -13,7 +13,6 @@ import java.util.Optional;
 import javax.persistence.EntityManager;
 import javax.persistence.NoResultException;
 import javax.persistence.PersistenceContext;
-import javax.persistence.Query;
 import javax.persistence.TypedQuery;
 
 @Service
@@ -41,7 +40,7 @@ public class AccountService implements IAccountService {
 
     @Override
     public Account getAccount(Long id) {
-        Optional optional=accountRepository.findById(id);
+        Optional<Account> optional=accountRepository.findById(id);
         if(optional.isEmpty())
             return null;
         else

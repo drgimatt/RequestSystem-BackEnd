@@ -9,7 +9,8 @@ import java.util.Objects;
 public class Dog {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    
+    @Column(name = "id")
+
     private Long id;
     @Lob
     private byte[] photo;
@@ -120,6 +121,7 @@ public class Dog {
         hash = 79 * hash + Objects.hashCode(this.doa);
         hash = 79 * hash + Objects.hashCode(this.personality);
         hash = 79 * hash + Objects.hashCode(this.gender);
+        hash = 79 * hash + Objects.hashCode(this.status);
         return hash;
     }
 
@@ -156,6 +158,9 @@ public class Dog {
         if (!Objects.equals(this.gender, other.gender)) {
             return false;
         }
+        if (!Objects.equals(this.status, other.status)) {
+            return false;
+        }
         return Objects.equals(this.id, other.id);
     }
 
@@ -170,6 +175,7 @@ public class Dog {
         sb.append(", date of arrival=").append(doa);
         sb.append(", personality=").append(personality);
         sb.append(", gender=").append(gender);
+        sb.append(", status=").append(status);
         sb.append('}');
         return sb.toString();
     }
