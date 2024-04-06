@@ -1,7 +1,7 @@
 package com.rijai.LocationApi.model;
 
 import javax.persistence.*;
-import java.util.Objects;
+
 
 @Entity
 @Table(name="accounts")
@@ -10,9 +10,8 @@ public class Account {
     @GeneratedValue(strategy = GenerationType.AUTO)
 
     private Long myId;
-    private String firstName;
-    private String lastName;
-    private String myAddress;
+    private String accountID;
+    private String dateCreated;
     private String username;
     private String password;
     private String role;
@@ -20,11 +19,10 @@ public class Account {
     public Account() {
     }
 
-    public Account(Long myId, String firstName, String lastName, String myAddress, String username, String password, String role) {
+    public Account(Long myId, String accountID, String dateCreated, String username, String password, String role) {
         this.myId = myId;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.myAddress = myAddress;
+        this.accountID = accountID;
+        this.dateCreated = dateCreated;
         this.username = username;
         this.password = password;
         this.role = role;
@@ -38,28 +36,20 @@ public class Account {
         this.myId = myId;
     }
 
-    public String getFirstName() {
-        return firstName;
+    public String getAccountID() {
+        return accountID;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
+    public void setAccountID(String accountID) {
+        this.accountID = accountID;
     }
 
-    public String getLastName() {
-        return lastName;
+    public String getDateCreated() {
+        return dateCreated;
     }
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
-    public String getMyAddress() {
-        return myAddress;
-    }
-
-    public void setMyAddress(String myAddress) {
-        this.myAddress = myAddress;
+    public void setDateCreated(String dateCreated) {
+        this.dateCreated = dateCreated;
     }
 
     public String getUsername() {
@@ -88,62 +78,65 @@ public class Account {
 
     @Override
     public int hashCode() {
-        int hash = 7;
-        hash = 79 * hash + Objects.hashCode(this.myId);
-        hash = 79 * hash + Objects.hashCode(this.firstName);
-        hash = 79 * hash + Objects.hashCode(this.lastName);
-        hash = 79 * hash + Objects.hashCode(this.myAddress);
-        hash = 79 * hash + Objects.hashCode(this.username);
-        hash = 79 * hash + Objects.hashCode(this.password);
-        hash = 79 * hash + Objects.hashCode(this.role);
-        return hash;
+        final int prime = 31;
+        int result = 1;
+        result = prime * result + ((myId == null) ? 0 : myId.hashCode());
+        result = prime * result + ((accountID == null) ? 0 : accountID.hashCode());
+        result = prime * result + ((dateCreated == null) ? 0 : dateCreated.hashCode());
+        result = prime * result + ((username == null) ? 0 : username.hashCode());
+        result = prime * result + ((password == null) ? 0 : password.hashCode());
+        result = prime * result + ((role == null) ? 0 : role.hashCode());
+        return result;
     }
 
     @Override
     public boolean equals(Object obj) {
-        if (this == obj) {
+        if (this == obj)
             return true;
-        }
-        if (obj == null) {
+        if (obj == null)
             return false;
-        }
-        if (getClass() != obj.getClass()) {
+        if (getClass() != obj.getClass())
             return false;
-        }
-        final Account other = (Account) obj;
-        if (!Objects.equals(this.role, other.role)) {
+        Account other = (Account) obj;
+        if (myId == null) {
+            if (other.myId != null)
+                return false;
+        } else if (!myId.equals(other.myId))
             return false;
-        }
-        if (!Objects.equals(this.password, other.password)) {
+        if (accountID == null) {
+            if (other.accountID != null)
+                return false;
+        } else if (!accountID.equals(other.accountID))
             return false;
-        }
-        if (!Objects.equals(this.username, other.username)) {
+        if (dateCreated == null) {
+            if (other.dateCreated != null)
+                return false;
+        } else if (!dateCreated.equals(other.dateCreated))
             return false;
-        }
-        if (!Objects.equals(this.myAddress, other.myAddress)) {
+        if (username == null) {
+            if (other.username != null)
+                return false;
+        } else if (!username.equals(other.username))
             return false;
-        }
-        if (!Objects.equals(this.lastName, other.lastName)) {
+        if (password == null) {
+            if (other.password != null)
+                return false;
+        } else if (!password.equals(other.password))
             return false;
-        }
-        if (!Objects.equals(this.firstName, other.firstName)) {
+        if (role == null) {
+            if (other.role != null)
+                return false;
+        } else if (!role.equals(other.role))
             return false;
-        }
-        return Objects.equals(this.myId, other.myId);
+        return true;
     }
 
     @Override
     public String toString() {
-        final StringBuilder sb = new StringBuilder("Account {");
-        sb.append(" myId=").append(myId);
-        sb.append(", firstName=").append(firstName).append('\'');
-        sb.append(", lastName=").append(lastName).append('\'');
-        sb.append(", myAddress=").append(myAddress).append('\'');
-        sb.append(", username=").append(username).append('\'');
-        sb.append(", password=").append(password).append('\'');
-        sb.append(", role=").append(role);
-        sb.append('}');
-        return sb.toString();
+        return "Account [myId=" + myId + ", accountID=" + accountID + ", dateCreated=" + dateCreated + ", username="
+                + username + ", password=" + password + ", role=" + role + "]";
     }
+
+
 
 }
