@@ -16,12 +16,12 @@ public class AccountController {
     private IAccountService accountService;
 
 
-    @RequestMapping(value="/api/users/{username}/{password}", method= RequestMethod.GET)
+    @GetMapping("/api/users/{username}/{password}")
     public Account requestAccount(@PathVariable Map<String, String> pathVarsMap) {
         return accountService.doesUserExist(pathVarsMap.get("username"), pathVarsMap.get("password"));
     }
 
-    @RequestMapping(value="/api/create-account", method= RequestMethod.POST)
+    @PostMapping("/api/create-account")
     public Account createAccount(@RequestBody Account account) {
         return accountService.createAccount(account);
     }
@@ -31,12 +31,12 @@ public class AccountController {
         return accountService.getAccount(id);
     }
 
-    @RequestMapping(value="/api/update-account/{id}", method=RequestMethod.PUT)
+    @PutMapping("/api/update-account/{id}")
     public Account updateAccount(@PathVariable Long id, @RequestBody Account account) {
         return accountService.updateAccount(id, account);
     }
     @RequestMapping(value = "/api/delete-account/{id}", method = {RequestMethod.DELETE, RequestMethod.POST})
-    public void deleteAccount(@PathVariable("id") Long id) {
+    public void deleteAccount(@PathVariable Long id) {
         accountService.deleteAccount(id);
     }
 

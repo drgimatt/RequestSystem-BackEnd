@@ -27,8 +27,8 @@ public class DogController {
        return dogService.getDog(id);
     }
 
-    @RequestMapping(value="/api/add-dog", method= RequestMethod.POST)
-    public Dog addDogSubmit(@RequestParam(value = "photo", required = false) MultipartFile file, @RequestParam("name") String name, @RequestParam("breed") String breed, @RequestParam("age") int age, @RequestParam("doa") Date doa, @RequestParam("personality") String personality, @RequestParam("status") String status, @RequestParam("gender") String gender) throws IOException {
+    @PostMapping("/api/add-dog")
+    public Dog addDogSubmit(@RequestParam(value = "photo", required = false) MultipartFile file, @RequestParam String name, @RequestParam String breed, @RequestParam int age, @RequestParam Date doa, @RequestParam String personality, @RequestParam String status, @RequestParam String gender) throws IOException {
         byte[] bytes = null;
         if (file != null) {
             bytes = file.getBytes();
@@ -38,8 +38,8 @@ public class DogController {
 
     }
 
-    @RequestMapping(value="/api/update-dog/{id}", method=RequestMethod.PUT)
-    public Dog updateDog(@RequestParam("id") Long id, @RequestParam(value = "photo", required = false) MultipartFile file, @RequestParam("name") String name, @RequestParam("breed") String breed, @RequestParam("age") int age, @RequestParam("doa") Date doa, @RequestParam("personality") String personality, @RequestParam("status") String status, @RequestParam("gender") String gender) throws IOException {
+    @PutMapping("/api/update-dog/{id}")
+    public Dog updateDog(@RequestParam Long id, @RequestParam(value = "photo", required = false) MultipartFile file, @RequestParam String name, @RequestParam String breed, @RequestParam int age, @RequestParam Date doa, @RequestParam String personality, @RequestParam String status, @RequestParam String gender) throws IOException {
         byte[] bytes = null;
         if (file != null) {
             bytes = file.getBytes();
@@ -51,8 +51,8 @@ public class DogController {
         Dog dog = new Dog(id, bytes, name, breed, age, doa, personality, status, gender);
         return dogService.updateDog(id, dog);
     }
-    @RequestMapping(value = "/api/delete-dog/{id}", method = RequestMethod.DELETE)
-    public void deleteDog(@PathVariable("id") Long id) {
+    @DeleteMapping("/api/delete-dog/{id}")
+    public void deleteDog(@PathVariable Long id) {
         dogService.deleteDog(id);
     }
 

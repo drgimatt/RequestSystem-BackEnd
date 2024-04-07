@@ -27,8 +27,8 @@ public class RequestController {
     public List<Request> findRequests(){
         return requestService.getRequests();
     }
-    @RequestMapping(value="/api/create-request", method= RequestMethod.POST)
-    public Request createRequest(@RequestParam("dogId") Long did, @RequestParam("userId") Long uid, @RequestParam("name") String name, @RequestParam("contact") String contact, @RequestParam("message") String message, @RequestParam("status") String status) throws JsonMappingException, JsonProcessingException {
+    @PostMapping("/api/create-request")
+    public Request createRequest(@RequestParam("dogId") Long did, @RequestParam("userId") Long uid, @RequestParam String name, @RequestParam String contact, @RequestParam String message, @RequestParam String status) throws JsonMappingException, JsonProcessingException {
         // Fetch the Dog from the database based on the provided dogId
         Dog dog = dogService.getDog(did);
         Account account = accountService.getAccount(uid);
@@ -40,7 +40,7 @@ public class RequestController {
         return requestService.createRequest(request);
     }
 
-    @RequestMapping(value="/api/update-request/{id}", method=RequestMethod.PUT)
+    @PutMapping("/api/update-request/{id}")
     public Request updateRequest(@PathVariable Long id, @RequestBody Request request) {
         return requestService.updateRequest(id, request);
     }
