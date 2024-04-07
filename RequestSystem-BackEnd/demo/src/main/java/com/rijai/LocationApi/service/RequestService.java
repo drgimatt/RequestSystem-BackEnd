@@ -1,6 +1,5 @@
 package com.rijai.LocationApi.service;
 
-import com.rijai.LocationApi.model.Account;
 import com.rijai.LocationApi.model.Request;
 import com.rijai.LocationApi.repository.RequestRepository;
 import org.springframework.beans.factory.annotation.Autowired;
