@@ -34,7 +34,7 @@ public class RequestController {
         Account account = accountService.getAccount(uid);
     
         // Create a new Request object with the retrieved Dog
-        Request request = new Request(null, dog.getId(), account.getMyId(), name, contact, message, status);
+        //Request request = new Request(null, dog.getId(), account.getMyId(), name, contact, message, status);
     
         // Persist the Request object in the database
         return requestService.createRequest(request);
