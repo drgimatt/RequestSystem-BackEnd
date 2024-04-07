@@ -34,4 +34,9 @@ public class RequestService implements IRequestService {
     public Request updateRequest(Long id, Request request) {
         return requestRepository.save(request);
     }
+
+    public void deleteRequest (Long id) {
+        Optional<Request> request = requestRepository.findById(id);
+        request.ifPresent(value -> requestRepository.delete(value));
+    }
 }
