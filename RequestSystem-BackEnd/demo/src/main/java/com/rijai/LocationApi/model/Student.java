@@ -16,7 +16,7 @@ public class Student {
     private String middleName;
     private String lastName;
     private String program;
-    private String yearLevel;
+    private int yearLevel;
     private String email;
     private String gender;
     @Lob
@@ -26,7 +26,7 @@ public class Student {
     }
 
     public Student(Long myId, String studentID, String firstName, String middleName, String lastName, String program,
-            String yearLevel, String email, String gender, byte[] photo) {
+            int yearLevel, String email, String gender, byte[] photo) {
         this.myId = myId;
         this.studentID = studentID;
         this.firstName = firstName;
@@ -89,11 +89,11 @@ public class Student {
         this.program = program;
     }
 
-    public String getYearLevel() {
+    public int getYearLevel() {
         return yearLevel;
     }
 
-    public void setYearLevel(String yearLevel) {
+    public void setYearLevel(int yearLevel) {
         this.yearLevel = yearLevel;
     }
 
@@ -131,7 +131,7 @@ public class Student {
         result = prime * result + ((middleName == null) ? 0 : middleName.hashCode());
         result = prime * result + ((lastName == null) ? 0 : lastName.hashCode());
         result = prime * result + ((program == null) ? 0 : program.hashCode());
-        result = prime * result + ((yearLevel == null) ? 0 : yearLevel.hashCode());
+        result = prime * result + yearLevel;
         result = prime * result + ((email == null) ? 0 : email.hashCode());
         result = prime * result + ((gender == null) ? 0 : gender.hashCode());
         result = prime * result + Arrays.hashCode(photo);
@@ -177,10 +177,7 @@ public class Student {
                 return false;
         } else if (!program.equals(other.program))
             return false;
-        if (yearLevel == null) {
-            if (other.yearLevel != null)
-                return false;
-        } else if (!yearLevel.equals(other.yearLevel))
+        if (yearLevel != other.yearLevel)
             return false;
         if (email == null) {
             if (other.email != null)
@@ -203,6 +200,8 @@ public class Student {
                 + middleName + ", lastName=" + lastName + ", program=" + program + ", yearLevel=" + yearLevel
                 + ", email=" + email + ", gender=" + gender + ", photo=" + Arrays.toString(photo) + "]";
     }
+
+
 
 
 

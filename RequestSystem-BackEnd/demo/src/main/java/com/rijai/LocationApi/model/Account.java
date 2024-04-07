@@ -10,20 +10,19 @@ public class Account {
     @GeneratedValue(strategy = GenerationType.AUTO)
 
     private Long myId;
-    private String accountID;
     private String userID;
     private String dateCreated;
     private String username;
     private String password;
-    private String role;
-    
-    public Account() {
+    @ManyToOne
+    @JoinColumn (name = "role_id")
+    private UserRoles role;
+
+    public Account(){
     }
 
-    public Account(Long myId, String accountID, String userID, String dateCreated, String username, String password,
-            String role) {
+    public Account(Long myId, String userID, String dateCreated, String username, String password, UserRoles role) {
         this.myId = myId;
-        this.accountID = accountID;
         this.userID = userID;
         this.dateCreated = dateCreated;
         this.username = username;
@@ -37,14 +36,6 @@ public class Account {
 
     public void setMyId(Long myId) {
         this.myId = myId;
-    }
-
-    public String getAccountID() {
-        return accountID;
-    }
-
-    public void setAccountID(String accountID) {
-        this.accountID = accountID;
     }
 
     public String getUserID() {
@@ -79,11 +70,11 @@ public class Account {
         this.password = password;
     }
 
-    public String getRole() {
+    public UserRoles getRole() {
         return role;
     }
 
-    public void setRole(String role) {
+    public void setRole(UserRoles role) {
         this.role = role;
     }
 
@@ -92,7 +83,6 @@ public class Account {
         final int prime = 31;
         int result = 1;
         result = prime * result + ((myId == null) ? 0 : myId.hashCode());
-        result = prime * result + ((accountID == null) ? 0 : accountID.hashCode());
         result = prime * result + ((userID == null) ? 0 : userID.hashCode());
         result = prime * result + ((dateCreated == null) ? 0 : dateCreated.hashCode());
         result = prime * result + ((username == null) ? 0 : username.hashCode());
@@ -114,11 +104,6 @@ public class Account {
             if (other.myId != null)
                 return false;
         } else if (!myId.equals(other.myId))
-            return false;
-        if (accountID == null) {
-            if (other.accountID != null)
-                return false;
-        } else if (!accountID.equals(other.accountID))
             return false;
         if (userID == null) {
             if (other.userID != null)
@@ -150,10 +135,10 @@ public class Account {
 
     @Override
     public String toString() {
-        return "Account [myId=" + myId + ", accountID=" + accountID + ", userID=" + userID + ", dateCreated="
-                + dateCreated + ", username=" + username + ", password=" + password + ", role=" + role + "]";
+        return "Account [myId=" + myId + ", userID=" + userID + ", dateCreated=" + dateCreated + ", username="
+                + username + ", password=" + password + ", role=" + role + "]";
     }
 
- 
+    
     
 }
