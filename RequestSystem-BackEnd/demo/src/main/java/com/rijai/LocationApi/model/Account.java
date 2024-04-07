@@ -11,17 +11,20 @@ public class Account {
 
     private Long myId;
     private String accountID;
+    private String userID;
     private String dateCreated;
     private String username;
     private String password;
     private String role;
-
+    
     public Account() {
     }
 
-    public Account(Long myId, String accountID, String dateCreated, String username, String password, String role) {
+    public Account(Long myId, String accountID, String userID, String dateCreated, String username, String password,
+            String role) {
         this.myId = myId;
         this.accountID = accountID;
+        this.userID = userID;
         this.dateCreated = dateCreated;
         this.username = username;
         this.password = password;
@@ -42,6 +45,14 @@ public class Account {
 
     public void setAccountID(String accountID) {
         this.accountID = accountID;
+    }
+
+    public String getUserID() {
+        return userID;
+    }
+
+    public void setUserID(String userID) {
+        this.userID = userID;
     }
 
     public String getDateCreated() {
@@ -82,6 +93,7 @@ public class Account {
         int result = 1;
         result = prime * result + ((myId == null) ? 0 : myId.hashCode());
         result = prime * result + ((accountID == null) ? 0 : accountID.hashCode());
+        result = prime * result + ((userID == null) ? 0 : userID.hashCode());
         result = prime * result + ((dateCreated == null) ? 0 : dateCreated.hashCode());
         result = prime * result + ((username == null) ? 0 : username.hashCode());
         result = prime * result + ((password == null) ? 0 : password.hashCode());
@@ -108,6 +120,11 @@ public class Account {
                 return false;
         } else if (!accountID.equals(other.accountID))
             return false;
+        if (userID == null) {
+            if (other.userID != null)
+                return false;
+        } else if (!userID.equals(other.userID))
+            return false;
         if (dateCreated == null) {
             if (other.dateCreated != null)
                 return false;
@@ -133,10 +150,10 @@ public class Account {
 
     @Override
     public String toString() {
-        return "Account [myId=" + myId + ", accountID=" + accountID + ", dateCreated=" + dateCreated + ", username="
-                + username + ", password=" + password + ", role=" + role + "]";
+        return "Account [myId=" + myId + ", accountID=" + accountID + ", userID=" + userID + ", dateCreated="
+                + dateCreated + ", username=" + username + ", password=" + password + ", role=" + role + "]";
     }
 
-
-
+ 
+    
 }
