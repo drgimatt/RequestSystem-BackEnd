@@ -16,7 +16,7 @@ public class Subjects {
     private Long myId;    
     private String courseCode;
     private String name;
-    @OneToMany(mappedBy = "subjects") 
+    @ManyToMany(mappedBy = "subjects") 
     private Set<Employee> employees;
 
     public Subjects(){

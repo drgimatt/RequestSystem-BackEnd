@@ -1,6 +1,7 @@
 package com.rijai.LocationApi.model;
 
 import java.util.Arrays;
+import java.util.Set;
 
 import javax.persistence.*;
 
@@ -23,11 +24,19 @@ public class Employee {
     private String email;
     private String gender;
     
+    @ManyToMany
+    @JoinTable(
+            name = "employee_subjects",
+            joinColumns = @JoinColumn(name = "employee_id"),
+            inverseJoinColumns = @JoinColumn(name = "subjects_id")
+    )
+    private Set<Subjects> subjects;
+
     public Employee() {
     }
 
     public Employee(Long myId, byte[] photo, String employeeID, String firstName, String middleName, String lastName,
-            String position, String department, String email, String gender) {
+            String position, String department, String email, String gender, Set<Subjects> subjects) {
         this.myId = myId;
         this.photo = photo;
         this.employeeID = employeeID;
@@ -38,6 +47,7 @@ public class Employee {
         this.department = department;
         this.email = email;
         this.gender = gender;
+        this.subjects = subjects;
     }
 
     public Long getMyId() {
@@ -120,6 +130,14 @@ public class Employee {
         this.gender = gender;
     }
 
+    public Set<Subjects> getSubjects() {
+        return subjects;
+    }
+
+    public void setSubjects(Set<Subjects> subjects) {
+        this.subjects = subjects;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;
@@ -134,6 +152,7 @@ public class Employee {
         result = prime * result + ((department == null) ? 0 : department.hashCode());
         result = prime * result + ((email == null) ? 0 : email.hashCode());
         result = prime * result + ((gender == null) ? 0 : gender.hashCode());
+        result = prime * result + ((subjects == null) ? 0 : subjects.hashCode());
         return result;
     }
 
@@ -193,6 +212,11 @@ public class Employee {
                 return false;
         } else if (!gender.equals(other.gender))
             return false;
+        if (subjects == null) {
+            if (other.subjects != null)
+                return false;
+        } else if (!subjects.equals(other.subjects))
+            return false;
         return true;
     }
 
@@ -200,11 +224,10 @@ public class Employee {
     public String toString() {
         return "Employee [myId=" + myId + ", photo=" + Arrays.toString(photo) + ", employeeID=" + employeeID
                 + ", firstName=" + firstName + ", middleName=" + middleName + ", lastName=" + lastName + ", position="
-                + position + ", department=" + department + ", email=" + email + ", gender=" + gender + "]";
+                + position + ", department=" + department + ", email=" + email + ", gender=" + gender + ", subjects="
+                + subjects + "]";
     }
-
-
-
-
+    
+    
 
 }
