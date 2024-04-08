@@ -11,11 +11,9 @@ public class Request {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long requestId;
-
     @ManyToOne
     @JoinColumn(name = "student_id")
     private Student student;
-
     @ManyToMany
     @JoinTable(
         name = "request_employee",

@@ -9,7 +9,6 @@ import java.util.Arrays;
 public class Student {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-
     private Long myId;
     private String studentID;
     private String firstName;

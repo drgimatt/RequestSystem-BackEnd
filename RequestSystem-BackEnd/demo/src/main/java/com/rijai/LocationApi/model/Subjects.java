@@ -12,7 +12,6 @@ import javax.persistence.*;
 public class Subjects {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-
     private Long myId;    
     private String courseCode;
     private String name;

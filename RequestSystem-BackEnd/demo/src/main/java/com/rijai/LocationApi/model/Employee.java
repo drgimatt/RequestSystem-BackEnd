@@ -11,7 +11,6 @@ import javax.persistence.*;
 public class Employee {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-
     private Long myId;    
     @Lob
     private byte[] photo;

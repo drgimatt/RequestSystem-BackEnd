@@ -8,7 +8,6 @@ import javax.persistence.*;
 public class UserRoles {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-
     private Long myId;    
     private String roleName;
     
