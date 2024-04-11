@@ -24,7 +24,7 @@ public class UserRolesController {
     }
 
     @GetMapping(value = "/api/show-role/{id}")
-    public UserRoles showrole(@PathVariable Long id) {
+    public UserRoles showRole(@PathVariable Long id) {
         return userRolesService.getRole(id);
     }
 
