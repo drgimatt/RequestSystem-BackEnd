@@ -26,7 +26,7 @@ public class DepartmentController {
         return departmentService.createDepartment(department);
     }
 
-    @GetMapping(value = "/api/show-department/{id}")
+    @GetMapping("/api/show-department/{id}")
     public Department showDepartment(@PathVariable Long id) {
         return departmentService.findById(id);
     }
@@ -35,7 +35,7 @@ public class DepartmentController {
     public Department updateDepartment(@PathVariable Long id, @RequestBody Department department) {
         return departmentService.updateDepartment(id, department);
     }
-    @DeleteMapping(value = "/api/delete-department/{id}")
+    @DeleteMapping("/api/delete-department/{id}")
     public void deleteDepartment(@PathVariable Long id) {
         departmentService.deleteDepartment(id);
     }

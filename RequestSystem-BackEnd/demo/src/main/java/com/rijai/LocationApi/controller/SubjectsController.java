@@ -23,7 +23,7 @@ public class SubjectsController {
         return subjectsService.createSubject(subject);
     }
 
-    @GetMapping(value = "/api/show-subject/{id}")
+    @GetMapping("/api/show-subject/{id}")
     public Subjects showSubject(@PathVariable Long id) {
         return subjectsService.getSubject(id);
     }
@@ -32,7 +32,7 @@ public class SubjectsController {
     public Subjects updateSubject(@PathVariable Long id, @RequestBody Subjects subject) {
         return subjectsService.updateSubject(id, subject);
     }
-    @RequestMapping(value = "/api/delete-subject/{id}", method = {RequestMethod.DELETE, RequestMethod.POST})
+    @DeleteMapping("/api/delete-subject/{id}")
     public void deleteSubject(@PathVariable Long id) {
         subjectsService.deleteSubject(id);
     }

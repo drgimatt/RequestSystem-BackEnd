@@ -26,7 +26,7 @@ public class AccountController {
         return accountService.createAccount(account);
     }
 
-    @GetMapping(value = "/api/show-account/{id}")
+    @GetMapping("/api/show-account/{id}")
     public Account showAccount(@PathVariable Long id) {
         return accountService.getAccount(id);
     }
@@ -35,7 +35,7 @@ public class AccountController {
     public Account updateAccount(@PathVariable Long id, @RequestBody Account account) {
         return accountService.updateAccount(id, account);
     }
-    @RequestMapping(value = "/api/delete-account/{id}", method = {RequestMethod.DELETE, RequestMethod.POST})
+    @DeleteMapping("/api/delete-account/{id}")
     public void deleteAccount(@PathVariable Long id) {
         accountService.deleteAccount(id);
     }

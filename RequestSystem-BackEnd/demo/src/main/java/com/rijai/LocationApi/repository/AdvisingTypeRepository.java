@@ -1,10 +1,11 @@
 package com.rijai.LocationApi.repository;
 
-import com.rijai.LocationApi.model.Request;
-
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
+import com.rijai.LocationApi.model.AdvisingType;
+
 @Repository
-public interface RequestRepository extends JpaRepository <Request, Long> {
+public interface AdvisingTypeRepository extends JpaRepository<AdvisingType, Long>{
+    
 }

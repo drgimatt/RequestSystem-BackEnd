@@ -27,12 +27,12 @@ public class RequestController {
     public Request updateRequest(@PathVariable Long id, @RequestBody Request request) {
         return requestService.updateRequest(id, request);
     }
-    @RequestMapping(value = "/api/delete-request/{id}", method = {RequestMethod.DELETE, RequestMethod.POST})
+    @DeleteMapping("/api/delete-request/{id}")
     public void deleteRequest(@PathVariable Long id) {
         requestService.deleteRequest(id);
     }
 
-    @GetMapping(value = "/api/show-request/{id}")
+    @GetMapping("/api/show-request/{id}")
     public Request showRequest(@PathVariable Long id) {
         return requestService.getRequest(id);
     }

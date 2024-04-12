@@ -23,7 +23,7 @@ public class UserRolesController {
         return userRolesService.createRole(role);
     }
 
-    @GetMapping(value = "/api/show-role/{id}")
+    @GetMapping("/api/show-role/{id}")
     public UserRoles showRole(@PathVariable Long id) {
         return userRolesService.getRole(id);
     }
@@ -32,7 +32,7 @@ public class UserRolesController {
     public UserRoles updateRole(@PathVariable Long id, @RequestBody UserRoles role) {
         return userRolesService.updateRole(id, role);
     }
-    @RequestMapping(value = "/api/delete-role/{id}", method = {RequestMethod.DELETE, RequestMethod.POST})
+    @DeleteMapping("/api/delete-role/{id}")
     public void deleteRole(@PathVariable Long id) {
         userRolesService.deleteRole(id);
     }
