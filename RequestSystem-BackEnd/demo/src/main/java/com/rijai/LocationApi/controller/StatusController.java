@@ -28,8 +28,8 @@ public class StatusController {
         return statusService.createStatus(status);
     }
 
-    @GetMapping("/api/show-status")
-    public List<Status> showAllStatues() {
+    @GetMapping("/api/status")
+    public List<Status> showAllStatuses() {
         return statusService.findAll();
     }
 

@@ -10,30 +10,31 @@ import java.util.List;
 @CrossOrigin(origins = "http://localhost:4200")
 
 @RestController
-@RequestMapping("/api/employees")
+
 public class EmployeeController {
     @Autowired
     private IEmployeeService employeeService;
-    
+
+    @RequestMapping("/api/employees")
     public List<Employee> findEmployees(){
        return employeeService.getEmployees();
     }
 
-    @RequestMapping("/show-employee/{id}")
+    @RequestMapping("/api/show-employee/{id}")
     public Employee showEmployee(@PathVariable Long id) {
        return employeeService.getEmployee(id);
     }
 
-    @PostMapping("/add-employee")
+    @PostMapping("/api/add-employee")
     public Employee addEmployee(@RequestBody Employee employee){
         return employeeService.createEmployee(employee);
     }
 
-    @PutMapping("/update-employee/{id}")
+    @PutMapping("/api/update-employee/{id}")
     public Employee updateEmployee(@PathVariable Long id, @RequestBody Employee employee) {
         return employeeService.updateEmployee(id, employee);
     }
-    @DeleteMapping("/delete-employee/{id}")
+    @DeleteMapping("/api/delete-employee/{id}")
     public void deleteEmployee(@PathVariable Long id){
         employeeService.deleteEmployee(id);
     }

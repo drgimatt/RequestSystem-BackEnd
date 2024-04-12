@@ -31,7 +31,7 @@ public class UserRolesController {
         return userRolesService.getRole(id);
     }
 
-    @GetMapping("/api/show-roles")
+    @GetMapping("/api/roles")
     public List<UserRoles> showAllRoles() {
         return userRolesService.findAll();
     }

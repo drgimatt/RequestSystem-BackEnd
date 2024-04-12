@@ -26,7 +26,7 @@ public class SubjectsController {
         return subjectsService.createSubject(subject);
     }
 
-    @GetMapping("/api/show-subjects")
+    @GetMapping("/api/subjects")
     public List<Subjects> showAllSubjects() {
         return subjectsService.findAll();
     }

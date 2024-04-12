@@ -3,6 +3,7 @@ package com.rijai.LocationApi.controller;
 import com.rijai.LocationApi.model.Account;
 import com.rijai.LocationApi.service.IAccountService;
 
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,6 +30,11 @@ public class AccountController {
     @GetMapping("/api/show-account/{id}")
     public Account showAccount(@PathVariable Long id) {
         return accountService.getAccount(id);
+    }
+
+    @GetMapping("/api/accounts")
+    public List<Account> showAccounts() {
+        return accountService.findAll();
     }
 
     @PutMapping("/api/update-account/{id}")

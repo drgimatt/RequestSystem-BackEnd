@@ -33,7 +33,7 @@ public class DepartmentController {
         return departmentService.findById(id);
     }
 
-    @GetMapping("/api/show-departments")
+    @GetMapping("/api/departments")
     public List<Department> showAllDepartments() {
         return departmentService.findAll();
     }

@@ -28,7 +28,7 @@ public class PriorityController {
         return priorityService.createPriority(priority);
     }
 
-    @GetMapping("/api/show-priorities")
+    @GetMapping("/api/priorities")
     public List<Priority> showAllPriorities() {
         return priorityService.findAll();
     }

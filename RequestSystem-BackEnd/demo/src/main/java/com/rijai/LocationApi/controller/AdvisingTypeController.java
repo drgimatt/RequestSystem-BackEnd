@@ -32,7 +32,7 @@ public class AdvisingTypeController {
     public AdvisingType showAdvisingType(@PathVariable Long id) {
         return typeService.findById(id);
     }
-    @GetMapping("/api/show-types")
+    @GetMapping("/api/types")
     public List<AdvisingType> showAllAdvisingTypes() {
         return typeService.findAll();
     }
