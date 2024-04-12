@@ -31,7 +31,7 @@ public class PriorityController {
         return priorityService.findById(id);
     }
 
-    @PutMapping("/api/update-role/{id}")
+    @PutMapping("/api/update-priority/{id}")
     public Priority updatePriority(@PathVariable Long id, @RequestBody Priority priority) {
         return priorityService.updatePriority(id, priority);
     }

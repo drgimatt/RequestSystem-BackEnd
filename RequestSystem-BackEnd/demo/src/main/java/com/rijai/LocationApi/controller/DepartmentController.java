@@ -31,7 +31,7 @@ public class DepartmentController {
         return departmentService.findById(id);
     }
 
-    @PutMapping("/api/update-role/{id}")
+    @PutMapping("/api/update-department/{id}")
     public Department updateDepartment(@PathVariable Long id, @RequestBody Department department) {
         return departmentService.updateDepartment(id, department);
     }

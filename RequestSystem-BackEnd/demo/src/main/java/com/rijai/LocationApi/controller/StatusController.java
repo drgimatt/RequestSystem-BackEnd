@@ -31,7 +31,7 @@ public class StatusController {
         return statusService.findById(id);
     }
 
-    @PutMapping("/api/update-role/{id}")
+    @PutMapping("/api/update-status/{id}")
     public Status updateStatus(@PathVariable Long id, @RequestBody Status status) {
         return statusService.updateStatus(id, status);
     }

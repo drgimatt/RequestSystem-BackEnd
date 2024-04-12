@@ -31,7 +31,7 @@ public class AdvisingTypeController {
         return typeService.findById(id);
     }
 
-    @PutMapping("/api/update-role/{id}")
+    @PutMapping("/api/update-type/{id}")
     public AdvisingType updateAdvisingType(@PathVariable Long id, @RequestBody AdvisingType type) {
         return typeService.updateAdvisingType(id, type);
     }
