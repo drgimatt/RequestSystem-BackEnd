@@ -1,5 +1,7 @@
 package com.rijai.LocationApi.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -24,6 +26,11 @@ public class StatusController {
     @PostMapping("/api/create-status")
     public Status createStatus(@RequestBody Status status) {
         return statusService.createStatus(status);
+    }
+
+    @GetMapping("/api/show-status")
+    public List<Status> showAllStatues() {
+        return statusService.findAll();
     }
 
     @GetMapping("/api/show-status/{id}")

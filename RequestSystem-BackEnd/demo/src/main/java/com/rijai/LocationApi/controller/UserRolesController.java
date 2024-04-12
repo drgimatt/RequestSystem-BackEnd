@@ -2,6 +2,9 @@ package com.rijai.LocationApi.controller;
 
 import com.rijai.LocationApi.model.UserRoles;
 import com.rijai.LocationApi.service.IUserRolesService;
+
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -26,6 +29,11 @@ public class UserRolesController {
     @GetMapping("/api/show-role/{id}")
     public UserRoles showRole(@PathVariable Long id) {
         return userRolesService.getRole(id);
+    }
+
+    @GetMapping("/api/show-roles")
+    public List<UserRoles> showAllRoles() {
+        return userRolesService.findAll();
     }
 
     @PutMapping("/api/update-role/{id}")

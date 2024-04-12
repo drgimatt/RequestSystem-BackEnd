@@ -1,5 +1,7 @@
 package com.rijai.LocationApi.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -30,7 +32,10 @@ public class AdvisingTypeController {
     public AdvisingType showAdvisingType(@PathVariable Long id) {
         return typeService.findById(id);
     }
-
+    @GetMapping("/api/show-types")
+    public List<AdvisingType> showAllAdvisingTypes() {
+        return typeService.findAll();
+    }
     @PutMapping("/api/update-type/{id}")
     public AdvisingType updateAdvisingType(@PathVariable Long id, @RequestBody AdvisingType type) {
         return typeService.updateAdvisingType(id, type);

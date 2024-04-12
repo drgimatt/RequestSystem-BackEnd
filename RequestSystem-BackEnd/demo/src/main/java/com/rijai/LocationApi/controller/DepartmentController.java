@@ -1,5 +1,7 @@
 package com.rijai.LocationApi.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -29,6 +31,11 @@ public class DepartmentController {
     @GetMapping("/api/show-department/{id}")
     public Department showDepartment(@PathVariable Long id) {
         return departmentService.findById(id);
+    }
+
+    @GetMapping("/api/show-departments")
+    public List<Department> showAllDepartments() {
+        return departmentService.findAll();
     }
 
     @PutMapping("/api/update-department/{id}")

@@ -1,5 +1,7 @@
 package com.rijai.LocationApi.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -24,6 +26,11 @@ public class PriorityController {
     @PostMapping("/api/create-priority")
     public Priority createPriority(@RequestBody Priority priority) {
         return priorityService.createPriority(priority);
+    }
+
+    @GetMapping("/api/show-priorities")
+    public List<Priority> showAllPriorities() {
+        return priorityService.findAll();
     }
 
     @GetMapping("/api/show-priority/{id}")

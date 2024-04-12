@@ -2,6 +2,9 @@ package com.rijai.LocationApi.controller;
 
 import com.rijai.LocationApi.model.Subjects;
 import com.rijai.LocationApi.service.ISubjectsService;
+
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -21,6 +24,11 @@ public class SubjectsController {
     @PostMapping("/api/create-subject")
     public Subjects createSubject(@RequestBody Subjects subject) {
         return subjectsService.createSubject(subject);
+    }
+
+    @GetMapping("/api/show-subjects")
+    public List<Subjects> showAllSubjects() {
+        return subjectsService.findAll();
     }
 
     @GetMapping("/api/show-subject/{id}")
