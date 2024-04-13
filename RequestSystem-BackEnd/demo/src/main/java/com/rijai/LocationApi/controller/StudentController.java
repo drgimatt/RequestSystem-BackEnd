@@ -26,12 +26,12 @@ public class StudentController {
     }
 
     @PostMapping("/api/add-student")
-    public Student addStudent(@RequestBody Student student){
+    public Student addStudent(@ModelAttribute Student student){
         return studentService.createStudent(student);
     }
 
     @PutMapping("/api/update-student/{id}")
-    public Student updateStudent(@PathVariable Long id, @RequestBody Student student) {
+    public Student updateStudent(@PathVariable Long id, @ModelAttribute Student student) {
         return studentService.updateStudent(id, student);
     }
     @DeleteMapping("/api/delete-student/{id}")

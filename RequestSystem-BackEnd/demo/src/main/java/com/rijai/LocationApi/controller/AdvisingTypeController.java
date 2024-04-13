@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -24,7 +25,7 @@ public class AdvisingTypeController {
     private IAdvisingTypeService typeService;
 
     @PostMapping("/api/create-type")
-    public AdvisingType createAdvisingType(@RequestBody AdvisingType type) {
+    public AdvisingType createAdvisingType(@ModelAttribute AdvisingType type) {
         return typeService.createAdvisingType(type);
     }
 
@@ -37,7 +38,7 @@ public class AdvisingTypeController {
         return typeService.findAll();
     }
     @PutMapping("/api/update-type/{id}")
-    public AdvisingType updateAdvisingType(@PathVariable Long id, @RequestBody AdvisingType type) {
+    public AdvisingType updateAdvisingType(@PathVariable Long id, @ModelAttribute AdvisingType type) {
         return typeService.updateAdvisingType(id, type);
     }
     @DeleteMapping("/api/delete-type/{id}")

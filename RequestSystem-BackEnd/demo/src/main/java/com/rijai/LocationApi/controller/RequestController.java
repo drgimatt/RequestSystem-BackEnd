@@ -19,12 +19,12 @@ public class RequestController {
         return requestService.getRequests();
     }
     @PostMapping("/api/create-request")
-    public Request createRequest(@RequestBody Request request){
+    public Request createRequest(@ModelAttribute Request request){
         return requestService.createRequest(request);
     }
 
     @PutMapping("/api/update-request/{id}")
-    public Request updateRequest(@PathVariable Long id, @RequestBody Request request) {
+    public Request updateRequest(@PathVariable Long id, @ModelAttribute Request request) {
         return requestService.updateRequest(id, request);
     }
     @DeleteMapping("/api/delete-request/{id}")

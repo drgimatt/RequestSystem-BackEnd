@@ -22,7 +22,7 @@ public class SubjectsController {
     // }
 
     @PostMapping("/api/create-subject")
-    public Subjects createSubject(@RequestBody Subjects subject) {
+    public Subjects createSubject(@ModelAttribute Subjects subject) {
         return subjectsService.createSubject(subject);
     }
 
@@ -37,7 +37,7 @@ public class SubjectsController {
     }
 
     @PutMapping("/api/update-subject/{id}")
-    public Subjects updateSubject(@PathVariable Long id, @RequestBody Subjects subject) {
+    public Subjects updateSubject(@PathVariable Long id, @ModelAttribute Subjects subject) {
         return subjectsService.updateSubject(id, subject);
     }
     @DeleteMapping("/api/delete-subject/{id}")

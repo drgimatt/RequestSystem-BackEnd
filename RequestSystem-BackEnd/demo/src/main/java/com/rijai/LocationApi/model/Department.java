@@ -3,13 +3,21 @@ package com.rijai.LocationApi.model;
 import javax.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.RequiredArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
 
 @Entity
 @Table(name="departments")
-@Data
+@RequiredArgsConstructor 
+@ToString 
+@EqualsAndHashCode
+@Getter
+@Setter
 @AllArgsConstructor
-@NoArgsConstructor
 public class Department {
 
     @Id

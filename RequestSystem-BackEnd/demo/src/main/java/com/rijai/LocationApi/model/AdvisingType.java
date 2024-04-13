@@ -4,12 +4,13 @@ import javax.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.RequiredArgsConstructor;
 
 @Entity
 @Table(name="advisingtype")
 @Data
 @AllArgsConstructor
-@NoArgsConstructor
+@RequiredArgsConstructor
 public class AdvisingType {
 
     @Id

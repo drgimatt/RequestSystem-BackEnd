@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -24,7 +25,7 @@ public class PriorityController {
     private IPriorityService priorityService;
 
     @PostMapping("/api/create-priority")
-    public Priority createPriority(@RequestBody Priority priority) {
+    public Priority createPriority(@ModelAttribute Priority priority) {
         return priorityService.createPriority(priority);
     }
 
@@ -39,7 +40,7 @@ public class PriorityController {
     }
 
     @PutMapping("/api/update-priority/{id}")
-    public Priority updatePriority(@PathVariable Long id, @RequestBody Priority priority) {
+    public Priority updatePriority(@PathVariable Long id, @ModelAttribute Priority priority) {
         return priorityService.updatePriority(id, priority);
     }
     @DeleteMapping("/api/delete-priority/{id}")

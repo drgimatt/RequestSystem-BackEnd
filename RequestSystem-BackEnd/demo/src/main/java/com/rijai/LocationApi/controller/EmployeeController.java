@@ -26,12 +26,12 @@ public class EmployeeController {
     }
 
     @PostMapping("/api/add-employee")
-    public Employee addEmployee(@RequestBody Employee employee){
+    public Employee addEmployee(@ModelAttribute Employee employee){
         return employeeService.createEmployee(employee);
     }
 
     @PutMapping("/api/update-employee/{id}")
-    public Employee updateEmployee(@PathVariable Long id, @RequestBody Employee employee) {
+    public Employee updateEmployee(@PathVariable Long id, @ModelAttribute Employee employee) {
         return employeeService.updateEmployee(id, employee);
     }
     @DeleteMapping("/api/delete-employee/{id}")

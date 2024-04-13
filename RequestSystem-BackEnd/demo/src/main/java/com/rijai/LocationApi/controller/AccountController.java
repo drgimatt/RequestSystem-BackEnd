@@ -23,12 +23,12 @@ public class AccountController {
     }
 
     @PostMapping("/api/create-account")
-    public Account createAccount(@RequestBody Account account) {
+    public Account createAccount(@ModelAttribute Account account) {
         return accountService.createAccount(account);
     }
 
     @GetMapping("/api/show-account/{id}")
-    public Account showAccount(@PathVariable Long id) {
+    public Account showAccount(@ModelAttribute Long id) {
         return accountService.getAccount(id);
     }
 
@@ -38,7 +38,7 @@ public class AccountController {
     }
 
     @PutMapping("/api/update-account/{id}")
-    public Account updateAccount(@PathVariable Long id, @RequestBody Account account) {
+    public Account updateAccount(@PathVariable Long id, @ModelAttribute Account account) {
         return accountService.updateAccount(id, account);
     }
     @DeleteMapping("/api/delete-account/{id}")
