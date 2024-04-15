@@ -29,17 +29,17 @@ public class StudentController {
     }
 
     @PostMapping("/api/add-student")
-    public Student addStudent (@ModelAttribute Student student){
-        // try {
-        //     // Convert MultipartFile to byte array
-        //     byte[] photoBytes = photo.getBytes();
+    public Student addStudent (@RequestPart MultipartFile photoBytes,@ModelAttribute Student student){
+        try {
+            // Convert MultipartFile to byte array
+            byte[] photoTest = photoBytes.getBytes();
             
-        //     // Set the byte array to the student's photo field
-        //     student.setPhoto(photoBytes);
-        // } catch (IOException e) {
-        //     // Handle exception
-        //     e.printStackTrace();
-        // }
+            // Set the byte array to the student's photo field
+            student.setPhoto(photoTest);
+        } catch (IOException e) {
+            // Handle exception
+            e.printStackTrace();
+        }
         
         // // Save the student object with photo
         return studentService.createStudent(student);
