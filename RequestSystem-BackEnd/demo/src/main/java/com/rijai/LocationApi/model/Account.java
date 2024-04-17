@@ -1,6 +1,10 @@
 package com.rijai.LocationApi.model;
 
+import java.util.Date;
+
 import javax.persistence.*;
+
+import org.springframework.format.annotation.DateTimeFormat;
 
 import lombok.Data;
 
@@ -12,10 +16,9 @@ public class Account {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long myId;
-    @OneToOne
-    @JoinColumn(name = "person_id")
-    private Person person;
-    private String dateCreated;
+    private String userID;
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    private Date dateCreated;
     private String username;
     private String password;
     @ManyToOne
