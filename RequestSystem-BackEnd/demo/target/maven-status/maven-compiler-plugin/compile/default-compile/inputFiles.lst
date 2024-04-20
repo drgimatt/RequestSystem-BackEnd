@@ -25,11 +25,9 @@ C:\Users\boxro\Desktop\RequestSystem\BackEnd\RequestSystem-BackEnd\RequestSystem
 C:\Users\boxro\Desktop\RequestSystem\BackEnd\RequestSystem-BackEnd\RequestSystem-BackEnd\demo\src\main\java\com\rijai\LocationApi\service\AccountService.java
 C:\Users\boxro\Desktop\RequestSystem\BackEnd\RequestSystem-BackEnd\RequestSystem-BackEnd\demo\src\main\java\com\rijai\LocationApi\service\EmployeeService.java
 C:\Users\boxro\Desktop\RequestSystem\BackEnd\RequestSystem-BackEnd\RequestSystem-BackEnd\demo\src\main\java\com\rijai\LocationApi\service\IUserRolesService.java
-C:\Users\boxro\Desktop\RequestSystem\BackEnd\RequestSystem-BackEnd\RequestSystem-BackEnd\demo\src\main\java\com\rijai\LocationApi\model\offsite\Student.java
 C:\Users\boxro\Desktop\RequestSystem\BackEnd\RequestSystem-BackEnd\RequestSystem-BackEnd\demo\src\main\java\com\rijai\LocationApi\controller\DepartmentController.java
 C:\Users\boxro\Desktop\RequestSystem\BackEnd\RequestSystem-BackEnd\RequestSystem-BackEnd\demo\src\main\java\com\rijai\LocationApi\model\Priority.java
 C:\Users\boxro\Desktop\RequestSystem\BackEnd\RequestSystem-BackEnd\RequestSystem-BackEnd\demo\src\main\java\com\rijai\LocationApi\repository\EmployeeRepository.java
-C:\Users\boxro\Desktop\RequestSystem\BackEnd\RequestSystem-BackEnd\RequestSystem-BackEnd\demo\src\main\java\com\rijai\LocationApi\model\offsite\Account.java
 C:\Users\boxro\Desktop\RequestSystem\BackEnd\RequestSystem-BackEnd\RequestSystem-BackEnd\demo\src\main\java\com\rijai\LocationApi\service\StatusService.java
 C:\Users\boxro\Desktop\RequestSystem\BackEnd\RequestSystem-BackEnd\RequestSystem-BackEnd\demo\src\main\java\com\rijai\LocationApi\model\AdvisingType.java
 C:\Users\boxro\Desktop\RequestSystem\BackEnd\RequestSystem-BackEnd\RequestSystem-BackEnd\demo\src\main\java\com\rijai\LocationApi\service\SubjectsService.java
@@ -56,4 +54,3 @@ C:\Users\boxro\Desktop\RequestSystem\BackEnd\RequestSystem-BackEnd\RequestSystem
 C:\Users\boxro\Desktop\RequestSystem\BackEnd\RequestSystem-BackEnd\RequestSystem-BackEnd\demo\src\main\java\com\rijai\LocationApi\repository\StatusRepository.java
 C:\Users\boxro\Desktop\RequestSystem\BackEnd\RequestSystem-BackEnd\RequestSystem-BackEnd\demo\src\main\java\com\rijai\LocationApi\repository\DepartmentRepository.java
 C:\Users\boxro\Desktop\RequestSystem\BackEnd\RequestSystem-BackEnd\RequestSystem-BackEnd\demo\src\main\java\com\rijai\LocationApi\repository\SubjectsRepository.java
-C:\Users\boxro\Desktop\RequestSystem\BackEnd\RequestSystem-BackEnd\RequestSystem-BackEnd\demo\src\main\java\com\rijai\LocationApi\model\offsite\Employee.java

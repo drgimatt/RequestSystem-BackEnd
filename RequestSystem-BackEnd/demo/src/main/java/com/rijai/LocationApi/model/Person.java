@@ -13,14 +13,12 @@ import javax.persistence.ManyToOne;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.experimental.SuperBuilder;
 
 
 @Entity
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-//@SuperBuilder(toBuilder = true)
 @Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 public abstract class Person {
     @Id
@@ -37,18 +35,4 @@ public abstract class Person {
     @JoinColumn(name = "department_id")
     private Department department;
     
-    // public Person() {
-    // }
-
-    // public Person(Long userId, byte[] photo, String firstName, String middleName, String lastName, String email,
-    //         String gender, Department department) {
-    //     this.userId = userId;
-    //     this.photo = photo;
-    //     this.firstName = firstName;
-    //     this.middleName = middleName;
-    //     this.lastName = lastName;
-    //     this.email = email;
-    //     this.gender = gender;
-    //     this.department = department;
-    // }
 }
