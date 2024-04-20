@@ -4,7 +4,6 @@ import com.rijai.LocationApi.model.Subjects;
 import com.rijai.LocationApi.service.ISubjectsService;
 
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -14,12 +13,6 @@ import org.springframework.web.bind.annotation.*;
 public class SubjectsController {
     @Autowired
     private ISubjectsService subjectsService;
-
-
-    // @GetMapping("/api/users/{username}/{password}")
-    // public Account requestAccount(@PathVariable Map<String, String> pathVarsMap) {
-    //     return accountService.doesUserExist(pathVarsMap.get("username"), pathVarsMap.get("password"));
-    // }
 
     @PostMapping("/api/create-subject")
     public Subjects createSubject(@ModelAttribute Subjects subject) {

@@ -1,7 +1,6 @@
 package com.rijai.LocationApi.model;
 
-import java.util.Set;
-
+import java.util.List;
 import javax.persistence.*;
 
 import lombok.AllArgsConstructor;
@@ -9,8 +8,6 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
-
-
 
 
 @Entity
@@ -29,13 +26,13 @@ public class Subjects {
     @ManyToOne
     @JoinColumn(name = "department_id")
     private Department department;
-    @ManyToMany
+    @ManyToMany(cascade = { CascadeType.ALL })
     @JoinTable(
-            name = "subjects_employee",
-            joinColumns = @JoinColumn(name = "subjects_id"),
-            inverseJoinColumns = @JoinColumn(name = "employee_id")
+            name = "employee_subjects",
+            joinColumns = @JoinColumn(name = "employee_id"),
+            inverseJoinColumns = @JoinColumn(name = "subjects_id")
     )
-    private Set<Employee> employees;
+    private List<Employee> employees;
 
 
 }

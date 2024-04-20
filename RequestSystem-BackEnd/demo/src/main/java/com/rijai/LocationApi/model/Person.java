@@ -13,17 +13,19 @@ import javax.persistence.ManyToOne;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 
 @Entity
 @Data
+@ToString
 @NoArgsConstructor
 @AllArgsConstructor
 @Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 public abstract class Person {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long userId;    
+    private Long myId;    
     @Lob
     private byte[] photo;  
     private String firstName;

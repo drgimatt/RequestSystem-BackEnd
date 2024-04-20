@@ -46,19 +46,19 @@ public class StudentController {
     }
 
     @PutMapping("/api/update-student/{id}")
-    public Student updateStudent(@PathVariable Long id, @ModelAttribute Student student) {
-        // try {
-        //     // Convert MultipartFile to byte array
-        //     byte[] photoBytes = photo.getBytes();
+    public Student updateStudent(@PathVariable Long id, @RequestPart MultipartFile photoBytes, @ModelAttribute Student student) {
+        try {
+            // Convert MultipartFile to byte array
+            byte[] photoTest = photoBytes.getBytes();
             
-        //     // Set the byte array to the student's photo field
-        //     student.setPhoto(photoBytes);
-        // } catch (IOException e) {
-        //     // Handle exception
-        //     e.printStackTrace();
-        // }
+            // Set the byte array to the student's photo field
+            student.setPhoto(photoTest);
+        } catch (IOException e) {
+            // Handle exception
+            e.printStackTrace();
+        }
         
-        // // Save the student object with photo
+        // Save the student object with photo
         return studentService.updateStudent(id,student);
     }
     @DeleteMapping("/api/delete-student/{id}")

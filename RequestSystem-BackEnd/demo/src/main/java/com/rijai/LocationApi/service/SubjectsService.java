@@ -45,6 +45,8 @@ public class SubjectsService implements ISubjectsService {
 
     @Override
     public Subjects createSubject(Subjects subject) {
+        // System.out.println("TARANTADO "+ subject);
+        // System.out.println("POTA " + subject.getEmployees().get(0).getMyId());
         return subjectsRepository.save(subject);
     }
 
