@@ -19,6 +19,9 @@ public class Account {
     private String userID;
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date dateCreated;
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    private Date birthDate;
+    private String phoneNumber;
     private String username;
     private String password;
     @ManyToOne

@@ -1,5 +1,7 @@
 package com.rijai.LocationApi.model;
 
+import java.util.Date;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -9,6 +11,8 @@ import javax.persistence.InheritanceType;
 import javax.persistence.JoinColumn;
 import javax.persistence.Lob;
 import javax.persistence.ManyToOne;
+
+import org.springframework.format.annotation.DateTimeFormat;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -33,6 +37,8 @@ public abstract class Person {
     private String lastName;
     private String email;
     private String gender;
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    private Date dateAdded;
     @ManyToOne
     @JoinColumn(name = "department_id")
     private Department department;

@@ -6,11 +6,11 @@ import lombok.Data;
 import lombok.RequiredArgsConstructor;
 
 @Entity
-@Table(name="advisingtype")
+@Table(name="formtype")
 @Data
 @AllArgsConstructor
 @RequiredArgsConstructor
-public class AdvisingType {
+public class FormType {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
