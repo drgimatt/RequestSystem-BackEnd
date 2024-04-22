@@ -17,7 +17,7 @@ public class Account {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long myId;
     private String userID;
-    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date dateCreated;
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date birthDate;

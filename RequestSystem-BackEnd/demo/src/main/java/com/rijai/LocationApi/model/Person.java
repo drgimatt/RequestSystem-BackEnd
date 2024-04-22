@@ -37,7 +37,7 @@ public abstract class Person {
     private String lastName;
     private String email;
     private String gender;
-    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date dateAdded;
     @ManyToOne
     @JoinColumn(name = "department_id")
