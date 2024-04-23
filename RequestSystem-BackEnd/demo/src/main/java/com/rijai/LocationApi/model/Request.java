@@ -40,6 +40,7 @@ public class Request {
     @ManyToOne
     @JoinColumn(name = "advisingtype_id")
     private AdvisingType advisingType;
+    private String otherAdvisingType;
     @ManyToOne
     @JoinColumn(name = "subject_id")
     private Subjects subject;
@@ -49,6 +50,7 @@ public class Request {
     @ManyToOne
     @JoinColumn(name = "formtype_id")    
     private FormType formType;
+    private String otherFormType;
     @ManyToOne
     @JoinColumn(name = "priority_id")
     private Priority priority;
