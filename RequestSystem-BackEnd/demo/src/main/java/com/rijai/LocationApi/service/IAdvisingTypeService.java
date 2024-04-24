@@ -8,7 +8,7 @@ import java.util.List;
 public interface IAdvisingTypeService {
 
     List<AdvisingType> findAll();
-    //AdvisingType doesAdvisingTypeExist(String type);
+    void initializeValues();
     AdvisingType createAdvisingType(AdvisingType type);
     AdvisingType updateAdvisingType(Long id, AdvisingType type);
     void deleteAdvisingType(Long id);

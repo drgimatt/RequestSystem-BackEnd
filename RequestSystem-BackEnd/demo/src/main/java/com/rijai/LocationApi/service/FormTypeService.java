@@ -1,7 +1,10 @@
 package com.rijai.LocationApi.service;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
+
+import javax.annotation.PostConstruct;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -13,6 +16,19 @@ import com.rijai.LocationApi.repository.FormTypeRepository;
 public class FormTypeService implements IFormTypeService{
     @Autowired
     private FormTypeRepository formTypeRepository;
+
+    @PostConstruct
+    public void initializeValues(){
+        if (formTypeRepository.count() == 0) {
+            List<String> formTypeNames = Arrays.asList("Peer Advising at W501-Intramuros / R203-Makati","Career Advising at Center for Career Services","Counseling of Personal Concerns at Center for Guidance Counseling","Others");
+            Long counter = 1L;
+            for (String name : formTypeNames) {
+                FormType formType = new FormType(counter, name); 
+                formTypeRepository.save(formType);
+                counter++;
+            }
+        }
+    }
 
     @Override
     public List<FormType> findAll() {

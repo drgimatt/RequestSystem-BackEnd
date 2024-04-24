@@ -1,7 +1,10 @@
 package com.rijai.LocationApi.service;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
+
+import javax.annotation.PostConstruct;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -13,6 +16,22 @@ import com.rijai.LocationApi.repository.AdvisingTypeRepository;
 public class AdvisingTypeService implements IAdvisingTypeService{
     @Autowired
     private AdvisingTypeRepository typeRepository;
+
+    @PostConstruct
+    public void initializeValues(){
+        if (typeRepository.count() == 0) {
+            List<String> typeNames = Arrays.asList("Thesis/Design Subject concerns","Requirements in Course Enrolled","Mentoring / Clarification on the Topic of the Subjects Enrolled",
+            "Concerns about Electives / Track in the Curriculum", "Concerns on Internship / OJT Matters", "Concerns regarding Placement / Employment Opportunities",
+            "Concerns regarding Personal / Family", "Others");
+            Long counter = 1L;
+            for (String name : typeNames) {
+                AdvisingType type = new AdvisingType(counter, name); 
+                typeRepository.save(type);
+                counter++;
+            }
+        }
+    }
+
 
     @Override
     public List<AdvisingType> findAll() {

@@ -6,9 +6,11 @@ import com.rijai.LocationApi.repository.UserRolesRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 
+import javax.annotation.PostConstruct;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
@@ -19,17 +21,18 @@ public class UserRolesService implements IUserRolesService {
     @PersistenceContext
     private EntityManager em;
 
-    /*public UserRoles doesRoleExist(String role) {
-        TypedQuery<Account> query = em.createQuery("SELECT roleName FROM Account u WHERE u.roleName = :role", UserRoles.class);
-        query.setParameter("username", username);
-        query.setParameter("password", password);
-
-        try {
-            return query.getSingleResult();
-        } catch (NoResultException | NonUniqueResultException e) {
-            return null;
+    @PostConstruct
+    public void initializeValues(){
+        if (userRolesRepository.count() == 0) {
+            List<String> userRoleNames = Arrays.asList("ADMINISTRATION","PROFESSOR","STUDENT");
+            Long counter = 1L;
+            for (String name : userRoleNames) {
+                UserRoles userRole = new UserRoles(counter, name); 
+                userRolesRepository.save(userRole);
+                counter++;
+            }
         }
-    } */
+    }
 
     public List<UserRoles> findAll() {
         return (List<UserRoles>) userRolesRepository.findAll();

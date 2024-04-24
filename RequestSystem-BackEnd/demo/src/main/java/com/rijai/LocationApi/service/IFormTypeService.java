@@ -7,7 +7,7 @@ import java.util.List;
 public interface IFormTypeService {
 
     List<FormType> findAll();
-    //Status doesStatusExist(String status);
+    void initializeValues();
     FormType createFormType(FormType formtype);
     FormType updateFormType(Long id, FormType formtype);
     void deleteFormType(Long id);

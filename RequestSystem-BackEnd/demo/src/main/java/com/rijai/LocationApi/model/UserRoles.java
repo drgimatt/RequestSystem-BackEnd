@@ -23,28 +23,4 @@ public class UserRoles {
     private Long myId;    
     private String roleName;
 
-    @PrePersist
-    public void initializeValues() {
-        // Set initial values for myId and roleName
-        if (myId == null) {
-            myId = 1L; // Start from 1
-        }
-        
-        if (roleName == null) {
-            // Initialize roleName based on myId
-            switch (myId.intValue()) {
-                case 1:
-                    roleName = "ADMINISTRATION";
-                    break;
-                case 2:
-                    roleName = "PROFESSOR";
-                    break;
-                case 3:
-                    roleName = "STUDENT";
-                    break;
-                default:
-                    roleName = ""; // Default role name if myId is not in the predefined range
-            }
-        }
-    }
 }

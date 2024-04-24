@@ -1,7 +1,10 @@
 package com.rijai.LocationApi.service;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
+
+import javax.annotation.PostConstruct;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -14,6 +17,19 @@ public class StatusService implements IStatusService{
     @Autowired
     private StatusRepository statusRepository;
 
+    @PostConstruct
+    public void initializeValues(){
+        if (statusRepository.count() == 0) {
+            List<String> statusNames = Arrays.asList("COMPLETED","PENDING","REJECTED");
+            Long counter = 1L;
+            for (String name : statusNames) {
+                Status status = new Status(counter, name); 
+                statusRepository.save(status);
+                counter++;
+            }
+        }
+    }
+    
     @Override
     public List<Status> findAll() {
         return statusRepository.findAll();

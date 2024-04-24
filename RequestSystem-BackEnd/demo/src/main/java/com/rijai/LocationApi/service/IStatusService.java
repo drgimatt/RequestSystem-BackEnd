@@ -8,7 +8,7 @@ import java.util.List;
 public interface IStatusService {
 
     List<Status> findAll();
-    //Status doesStatusExist(String status);
+    void initializeValues();
     Status createStatus(Status status);
     Status updateStatus(Long id, Status status);
     void deleteStatus(Long id);

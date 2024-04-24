@@ -15,12 +15,6 @@ public class UserRolesController {
     @Autowired
     private IUserRolesService userRolesService;
 
-
-    // @GetMapping("/api/users/{username}/{password}")
-    // public Account requestAccount(@PathVariable Map<String, String> pathVarsMap) {
-    //     return accountService.doesUserExist(pathVarsMap.get("username"), pathVarsMap.get("password"));
-    // }
-
     @PostMapping("/api/create-role")
     public UserRoles createRole(@ModelAttribute UserRoles role) {
         return userRolesService.createRole(role);

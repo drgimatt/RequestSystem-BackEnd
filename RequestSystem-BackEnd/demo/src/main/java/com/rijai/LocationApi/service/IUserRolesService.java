@@ -8,7 +8,7 @@ import java.util.List;
 public interface IUserRolesService {
 
     List<UserRoles> findAll();
-    //UserRoles doesRoleExist(String role);
+    void initializeValues();
     UserRoles createRole(UserRoles roles);
     UserRoles updateRole(Long id, UserRoles roles);
     void deleteRole(Long id);
