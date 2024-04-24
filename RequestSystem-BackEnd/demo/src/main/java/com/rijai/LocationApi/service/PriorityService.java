@@ -20,7 +20,7 @@ public class PriorityService implements IPriorityService{
     @PostConstruct
     public void initializeValues(){
         if (priorityRepository.count() == 0) {
-            List<String> priorityNames = Arrays.asList("COMPLETED", "PENDING", "REJECTED");
+            List<String> priorityNames = Arrays.asList("Low", "Moderate", "High");
             Long counter = 1L;
             for (String name : priorityNames) {
                 Priority priority = new Priority(counter, name); 
