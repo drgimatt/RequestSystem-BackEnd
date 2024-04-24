@@ -21,11 +21,10 @@ public class FormTypeService implements IFormTypeService{
     public void initializeValues(){
         if (formTypeRepository.count() == 0) {
             List<String> formTypeNames = Arrays.asList("Peer Advising at W501-Intramuros / R203-Makati","Career Advising at Center for Career Services","Counseling of Personal Concerns at Center for Guidance Counseling","Others");
-            Long counter = 1L;
+            int id = 1;
             for (String name : formTypeNames) {
-                FormType formType = new FormType(counter, name); 
+                FormType formType = new FormType((long) id++, name);
                 formTypeRepository.save(formType);
-                counter++;
             }
         }
     }
