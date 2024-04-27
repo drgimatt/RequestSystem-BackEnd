@@ -8,6 +8,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.Set;
 
@@ -31,12 +32,15 @@ public class Request {
     )
     private Set<Employee> employees;
     private String title;
+    @Column(columnDefinition = "DATETIME")
     @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
-    private Date dateCreated;
+    private LocalDateTime dateCreated;
+    @Column(columnDefinition = "DATETIME")
     @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
-    private Date dateModified;
+    private LocalDateTime dateModified;
+    @Column(columnDefinition = "DATETIME")
     @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
-    private Date dateResolved;
+    private LocalDateTime dateResolved;
     @ManyToOne
     @JoinColumn(name = "advisingtype_id")
     private AdvisingType advisingType;

@@ -1,5 +1,6 @@
 package com.rijai.LocationApi.model;
 
+import java.time.LocalDateTime;
 import java.util.Date;
 
 import javax.persistence.Entity;
@@ -38,7 +39,7 @@ public abstract class Person {
     private String email;
     private String gender;
     @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
-    private Date dateAdded;
+    private LocalDateTime dateAdded;
     @ManyToOne
     @JoinColumn(name = "department_id")
     private Department department;
