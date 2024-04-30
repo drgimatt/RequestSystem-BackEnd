@@ -4,6 +4,7 @@ C:\Users\boxro\Desktop\RequestSystem\BackEnd\RequestSystem-BackEnd\RequestSystem
 C:\Users\boxro\Desktop\RequestSystem\BackEnd\RequestSystem-BackEnd\RequestSystem-BackEnd\demo\src\main\java\com\rijai\LocationApi\controller\SubjectsController.java
 C:\Users\boxro\Desktop\RequestSystem\BackEnd\RequestSystem-BackEnd\RequestSystem-BackEnd\demo\src\main\java\com\rijai\LocationApi\model\Request.java
 C:\Users\boxro\Desktop\RequestSystem\BackEnd\RequestSystem-BackEnd\RequestSystem-BackEnd\demo\src\main\java\com\rijai\LocationApi\model\Subjects.java
+C:\Users\boxro\Desktop\RequestSystem\BackEnd\RequestSystem-BackEnd\RequestSystem-BackEnd\demo\src\main\java\com\rijai\LocationApi\service\INotificationService.java
 C:\Users\boxro\Desktop\RequestSystem\BackEnd\RequestSystem-BackEnd\RequestSystem-BackEnd\demo\src\main\java\com\rijai\LocationApi\model\FormType.java
 C:\Users\boxro\Desktop\RequestSystem\BackEnd\RequestSystem-BackEnd\RequestSystem-BackEnd\demo\src\main\java\com\rijai\LocationApi\DemoApplication.java
 C:\Users\boxro\Desktop\RequestSystem\BackEnd\RequestSystem-BackEnd\RequestSystem-BackEnd\demo\src\main\java\com\rijai\LocationApi\model\Employee.java
@@ -16,11 +17,13 @@ C:\Users\boxro\Desktop\RequestSystem\BackEnd\RequestSystem-BackEnd\RequestSystem
 C:\Users\boxro\Desktop\RequestSystem\BackEnd\RequestSystem-BackEnd\RequestSystem-BackEnd\demo\src\main\java\com\rijai\LocationApi\controller\StudentController.java
 C:\Users\boxro\Desktop\RequestSystem\BackEnd\RequestSystem-BackEnd\RequestSystem-BackEnd\demo\src\main\java\com\rijai\LocationApi\repository\UserRolesRepository.java
 C:\Users\boxro\Desktop\RequestSystem\BackEnd\RequestSystem-BackEnd\RequestSystem-BackEnd\demo\src\main\java\com\rijai\LocationApi\model\Person.java
+C:\Users\boxro\Desktop\RequestSystem\BackEnd\RequestSystem-BackEnd\RequestSystem-BackEnd\demo\src\main\java\com\rijai\LocationApi\service\NotificationService.java
 C:\Users\boxro\Desktop\RequestSystem\BackEnd\RequestSystem-BackEnd\RequestSystem-BackEnd\demo\src\main\java\com\rijai\LocationApi\repository\AccountRepository.java
 C:\Users\boxro\Desktop\RequestSystem\BackEnd\RequestSystem-BackEnd\RequestSystem-BackEnd\demo\src\main\java\com\rijai\LocationApi\service\IAccountService.java
 C:\Users\boxro\Desktop\RequestSystem\BackEnd\RequestSystem-BackEnd\RequestSystem-BackEnd\demo\src\main\java\com\rijai\LocationApi\service\DepartmentService.java
 C:\Users\boxro\Desktop\RequestSystem\BackEnd\RequestSystem-BackEnd\RequestSystem-BackEnd\demo\src\main\java\com\rijai\LocationApi\repository\PriorityRepository.java
 C:\Users\boxro\Desktop\RequestSystem\BackEnd\RequestSystem-BackEnd\RequestSystem-BackEnd\demo\src\main\java\com\rijai\LocationApi\controller\PriorityController.java
+C:\Users\boxro\Desktop\RequestSystem\BackEnd\RequestSystem-BackEnd\RequestSystem-BackEnd\demo\src\main\java\com\rijai\LocationApi\controller\NotificationController.java
 C:\Users\boxro\Desktop\RequestSystem\BackEnd\RequestSystem-BackEnd\RequestSystem-BackEnd\demo\src\main\java\com\rijai\LocationApi\service\PriorityService.java
 C:\Users\boxro\Desktop\RequestSystem\BackEnd\RequestSystem-BackEnd\RequestSystem-BackEnd\demo\src\main\java\com\rijai\LocationApi\controller\AdvisingTypeController.java
 C:\Users\boxro\Desktop\RequestSystem\BackEnd\RequestSystem-BackEnd\RequestSystem-BackEnd\demo\src\main\java\com\rijai\LocationApi\service\AccountService.java
@@ -41,6 +44,7 @@ C:\Users\boxro\Desktop\RequestSystem\BackEnd\RequestSystem-BackEnd\RequestSystem
 C:\Users\boxro\Desktop\RequestSystem\BackEnd\RequestSystem-BackEnd\RequestSystem-BackEnd\demo\src\main\java\com\rijai\LocationApi\controller\UserRolesController.java
 C:\Users\boxro\Desktop\RequestSystem\BackEnd\RequestSystem-BackEnd\RequestSystem-BackEnd\demo\src\main\java\com\rijai\LocationApi\service\IAdvisingTypeService.java
 C:\Users\boxro\Desktop\RequestSystem\BackEnd\RequestSystem-BackEnd\RequestSystem-BackEnd\demo\src\main\java\com\rijai\LocationApi\repository\StudentRepository.java
+C:\Users\boxro\Desktop\RequestSystem\BackEnd\RequestSystem-BackEnd\RequestSystem-BackEnd\demo\src\main\java\com\rijai\LocationApi\repository\NotificationRepository.java
 C:\Users\boxro\Desktop\RequestSystem\BackEnd\RequestSystem-BackEnd\RequestSystem-BackEnd\demo\src\main\java\com\rijai\LocationApi\repository\AdvisingTypeRepository.java
 C:\Users\boxro\Desktop\RequestSystem\BackEnd\RequestSystem-BackEnd\RequestSystem-BackEnd\demo\src\main\java\com\rijai\LocationApi\service\FormTypeService.java
 C:\Users\boxro\Desktop\RequestSystem\BackEnd\RequestSystem-BackEnd\RequestSystem-BackEnd\demo\src\main\java\com\rijai\LocationApi\model\Account.java
@@ -50,6 +54,7 @@ C:\Users\boxro\Desktop\RequestSystem\BackEnd\RequestSystem-BackEnd\RequestSystem
 C:\Users\boxro\Desktop\RequestSystem\BackEnd\RequestSystem-BackEnd\RequestSystem-BackEnd\demo\src\main\java\com\rijai\LocationApi\model\Status.java
 C:\Users\boxro\Desktop\RequestSystem\BackEnd\RequestSystem-BackEnd\RequestSystem-BackEnd\demo\src\main\java\com\rijai\LocationApi\repository\FormTypeRepository.java
 C:\Users\boxro\Desktop\RequestSystem\BackEnd\RequestSystem-BackEnd\RequestSystem-BackEnd\demo\src\main\java\com\rijai\LocationApi\service\StudentService.java
+C:\Users\boxro\Desktop\RequestSystem\BackEnd\RequestSystem-BackEnd\RequestSystem-BackEnd\demo\src\main\java\com\rijai\LocationApi\model\Notification.java
 C:\Users\boxro\Desktop\RequestSystem\BackEnd\RequestSystem-BackEnd\RequestSystem-BackEnd\demo\src\main\java\com\rijai\LocationApi\service\ISubjectsService.java
 C:\Users\boxro\Desktop\RequestSystem\BackEnd\RequestSystem-BackEnd\RequestSystem-BackEnd\demo\src\main\java\com\rijai\LocationApi\service\UserRolesService.java
 C:\Users\boxro\Desktop\RequestSystem\BackEnd\RequestSystem-BackEnd\RequestSystem-BackEnd\demo\src\main\java\com\rijai\LocationApi\controller\PersonController.java
