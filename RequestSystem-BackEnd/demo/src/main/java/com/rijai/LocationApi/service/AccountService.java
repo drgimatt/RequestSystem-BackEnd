@@ -3,7 +3,6 @@ package com.rijai.LocationApi.service;
 import com.rijai.LocationApi.model.Account;
 import com.rijai.LocationApi.repository.AccountRepository;
 
-import org.hibernate.NonUniqueResultException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -29,7 +28,7 @@ public class AccountService implements IAccountService {
 
         try {
             return query.getSingleResult();
-        } catch (NoResultException | NonUniqueResultException e) {
+        } catch (NoResultException e) {
             return null;
         }
     }

@@ -2,6 +2,7 @@ package com.rijai.LocationApi.model;
 
 import javax.persistence.*;
 
+//import org.hibernate.envers.Audited;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import lombok.AllArgsConstructor;
@@ -14,6 +15,7 @@ import java.util.Set;
 @Entity
 @Table(name="requests")
 @Data
+//@Audited
 @AllArgsConstructor
 @NoArgsConstructor
 public class Request {
@@ -60,6 +62,6 @@ public class Request {
     @ManyToOne
     @JoinColumn(name = "status_id")
     private Status status;
-    
+    private Boolean isDeleted;
 
 }

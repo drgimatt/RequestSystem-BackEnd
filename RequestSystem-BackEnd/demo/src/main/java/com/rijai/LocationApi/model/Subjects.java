@@ -29,8 +29,8 @@ public class Subjects {
     @ManyToMany(cascade = { CascadeType.ALL })
     @JoinTable(
             name = "employee_subjects",
-            joinColumns = @JoinColumn(name = "employee_id"),
-            inverseJoinColumns = @JoinColumn(name = "subjects_id")
+            joinColumns = @JoinColumn(name = "subjects_id"),
+            inverseJoinColumns = @JoinColumn(name = "employee_id")
     )
     private List<Employee> employees;
 

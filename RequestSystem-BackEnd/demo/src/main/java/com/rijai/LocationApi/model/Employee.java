@@ -25,5 +25,5 @@ public class Employee extends Person {
     @JsonIgnore
     @ManyToMany(mappedBy = "employees")
     private List<Subjects> subjects;
-
+    private String status;
 }
