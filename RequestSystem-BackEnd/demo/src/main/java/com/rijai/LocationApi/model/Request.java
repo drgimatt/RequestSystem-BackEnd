@@ -15,7 +15,6 @@ import java.util.Set;
 @Entity
 @Table(name="requests")
 @Data
-//@Audited
 @AllArgsConstructor
 @NoArgsConstructor
 public class Request {
