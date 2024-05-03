@@ -37,5 +37,9 @@ public class RequestController {
         return requestService.getRequest(id);
     }
 
+    @GetMapping("/api/show-professor-requests/{id}")
+    public List<Request> showProfessorsRequest(@PathVariable String id) {
+        return requestService.getProfessorRequests(id);
+    }
 
 }

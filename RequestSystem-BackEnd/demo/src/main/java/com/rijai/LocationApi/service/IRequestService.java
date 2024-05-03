@@ -8,6 +8,7 @@ import java.util.List;
 public interface IRequestService {
 
     List<Request> getRequests();
+    List<Request> getProfessorRequests(String employeeID);
     Request createRequest(Request request);
     Request getRequest(Long id);
     Request updateRequest(Long id, Request request);

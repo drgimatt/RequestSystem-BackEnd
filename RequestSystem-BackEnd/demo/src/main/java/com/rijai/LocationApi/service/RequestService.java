@@ -8,13 +8,32 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Optional;
 
+import javax.persistence.EntityManager;
+import javax.persistence.NoResultException;
+import javax.persistence.PersistenceContext;
+import javax.persistence.TypedQuery;
+
 @Service
 public class RequestService implements IRequestService {
     @Autowired
-    private RequestRepository requestRepository;
+    private RequestRepository requestRepository;    
+    @PersistenceContext
+    private EntityManager em;
 
     public List<Request> getRequests() {
         return (List<Request>) requestRepository.findAll();
+    }
+
+
+    public List<Request> getProfessorRequests(String employeeID) {
+        TypedQuery<Request> query = em.createQuery("SELECT r FROM Request r JOIN r.subject s JOIN s.employees e WHERE e.employeeID = :employeeid", Request.class);
+        query.setParameter("employeeid", employeeID);
+
+        try {
+            return query.getResultList();
+        } catch (NoResultException e) {
+            return null;
+        }
     }
 
     @Override
