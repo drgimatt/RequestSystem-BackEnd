@@ -22,16 +22,25 @@ public class AccountService implements IAccountService {
     private EntityManager em;
 
     public Account doesUserExist(String username, String password) {
-        TypedQuery<Account> query = em.createQuery("SELECT u FROM Account u WHERE u.username = :username AND u.password = :password", Account.class);
+        TypedQuery<Account> query = em.createQuery(
+            "SELECT u FROM Account u WHERE u.username = :username",
+            Account.class
+        );
         query.setParameter("username", username);
-        query.setParameter("password", password);
-
+    
         try {
-            return query.getSingleResult();
+            Account user = query.getSingleResult();
+            // Perform a case-sensitive comparison of passwords
+            if (user.getPassword().equals(password)) {
+                return user;
+            } else {
+                return null;
+            }
         } catch (NoResultException e) {
             return null;
         }
     }
+    
 
     public List<Account> findAll() {
         return (List<Account>) accountRepository.findAll();
