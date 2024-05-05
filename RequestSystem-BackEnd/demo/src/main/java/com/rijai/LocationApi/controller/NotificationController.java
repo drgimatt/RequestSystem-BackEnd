@@ -51,4 +51,9 @@ public class NotificationController {
     public List<Notification> getUserNotification(@PathVariable Long id) {
         return notificationService.getUserNotifications(id.toString());
     }
+
+    @GetMapping("/api/notifications-generalized/{arguments}")
+    public List<Notification> getGeneralNotification(@PathVariable String arguments) {
+        return notificationService.getGeneralizedNotifications(arguments);
+    }
 }

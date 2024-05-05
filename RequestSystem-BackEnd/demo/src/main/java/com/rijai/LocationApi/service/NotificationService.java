@@ -73,4 +73,16 @@ public class NotificationService implements INotificationService{
         }
     }
 
+    @Override
+    public List<Notification> getGeneralizedNotifications(String arguments) {
+        TypedQuery<Notification> query = em.createQuery(arguments, Notification.class);
+        try {
+            return query.getResultList();
+        } catch (NoResultException e) {
+            return null;
+        }
+    }
+
+    
+
 }

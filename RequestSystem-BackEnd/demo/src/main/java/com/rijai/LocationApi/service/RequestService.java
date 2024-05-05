@@ -58,4 +58,15 @@ public class RequestService implements IRequestService {
         Optional<Request> request = requestRepository.findById(id);
         request.ifPresent(value -> requestRepository.delete(value));
     }
+
+
+    @Override
+    public List<Request> getGeneralizedRequests(String arguments) {
+        TypedQuery<Request> query = em.createQuery(arguments, Request.class);
+        try {
+            return query.getResultList();
+        } catch (NoResultException e) {
+            return null;
+        }
+    }
 }

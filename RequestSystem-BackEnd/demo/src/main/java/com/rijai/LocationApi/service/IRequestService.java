@@ -13,4 +13,5 @@ public interface IRequestService {
     Request getRequest(Long id);
     Request updateRequest(Long id, Request request);
     void deleteRequest(Long id);
+    List<Request> getGeneralizedRequests(String arguments);
 }

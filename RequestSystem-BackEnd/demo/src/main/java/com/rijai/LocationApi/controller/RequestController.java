@@ -42,4 +42,9 @@ public class RequestController {
         return requestService.getProfessorRequests(id);
     }
 
+    @GetMapping("/api/requests-generalized/{arguments}")
+    public List<Request> getGeneralRequests(@PathVariable String arguments) {
+        return requestService.getGeneralizedRequests(arguments);
+    }
+
 }
