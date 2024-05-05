@@ -11,6 +11,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.lang.Nullable;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -36,14 +37,17 @@ public class Notification {
     private Date date;
 
     @ManyToOne
+    @Nullable
     @JoinColumn(name = "notify_person_id")
     private Person notifyUser;
 
     @ManyToOne
+    @Nullable
     @JoinColumn(name = "event_person_id")
     private Person eventUser;
 
     @ManyToOne
+    @Nullable
     @JoinColumn(name = "request_id")
     private Request request;
 
