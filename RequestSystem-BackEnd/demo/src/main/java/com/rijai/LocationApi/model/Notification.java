@@ -1,12 +1,16 @@
 package com.rijai.LocationApi.model;
 
 import java.util.Date;
+import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
@@ -36,14 +40,17 @@ public class Notification {
     @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date date;
 
-    @ManyToOne
-    @Nullable
-    @JoinColumn(name = "notify_person_id")
-    private Person notifyUser;
+    @ManyToMany(cascade = { CascadeType.ALL })
+    @JoinTable(
+            name = "person_notifications",
+            joinColumns = @JoinColumn(name = "notifications_id"),
+            inverseJoinColumns = @JoinColumn(name = "person_id")
+    )
+    private List<Person> notifyPersons;
 
     @ManyToOne
     @Nullable
-    @JoinColumn(name = "event_person_id")
+    @JoinColumn(name = "event_user_id")
     private Person eventUser;
 
     @ManyToOne
