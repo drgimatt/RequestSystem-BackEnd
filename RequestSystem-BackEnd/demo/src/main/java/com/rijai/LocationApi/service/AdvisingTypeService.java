@@ -18,19 +18,23 @@ public class AdvisingTypeService implements IAdvisingTypeService{
     private AdvisingTypeRepository typeRepository;
 
     @PostConstruct
-    public void initializeValues(){
+    public void initializeValues() {
         if (typeRepository.count() == 0) {
-            List<String> typeNames = Arrays.asList("Thesis/Design Subject concerns","Requirements in Course Enrolled","Mentoring / Clarification on the Topic of the Subjects Enrolled",
-            "Concerns about Electives / Track in the Curriculum", "Concerns on Internship / OJT Matters", "Concerns regarding Placement / Employment Opportunities",
-            "Concerns regarding Personal / Family", "Others");
-            Long counter = 1L;
-            for (String name : typeNames) {
-                AdvisingType type = new AdvisingType(counter, name); 
+            List<String> typeNames = Arrays.asList("Thesis/Design Subject concerns", "Requirements in Course Enrolled",
+                    "Mentoring / Clarification on the Topic of the Subjects Enrolled",
+                    "Concerns about Electives / Track in the Curriculum", "Concerns on Internship / OJT Matters",
+                    "Concerns regarding Placement / Employment Opportunities", "Concerns regarding Personal / Family",
+                    "Others");
+    
+            for (int i = 0; i < typeNames.size(); i++) {
+                AdvisingType type = new AdvisingType();
+                type.setId((long) (i + 1)); // Explicitly set the ID
+                type.setName(typeNames.get(i));
                 typeRepository.save(type);
-                counter++;
             }
         }
     }
+    
 
 
     @Override
