@@ -30,13 +30,19 @@ public class Notification {
     private String title;
     private String message;
     private String eventType;
-    private int seenNotif;
+    private int hasSeenNotif;
+
     @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date date;
 
     @ManyToOne
-    @JoinColumn(name = "person_id")
-    private Person person;
+    @JoinColumn(name = "notify_person_id")
+    private Person notifyUser;
+
+    @ManyToOne
+    @JoinColumn(name = "event_person_id")
+    private Person eventUser;
+
     @ManyToOne
     @JoinColumn(name = "request_id")
     private Request request;
