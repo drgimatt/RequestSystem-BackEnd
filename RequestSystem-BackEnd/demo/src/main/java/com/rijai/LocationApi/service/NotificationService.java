@@ -3,6 +3,11 @@ package com.rijai.LocationApi.service;
 import java.util.List;
 import java.util.Optional;
 
+import javax.persistence.EntityManager;
+import javax.persistence.NoResultException;
+import javax.persistence.PersistenceContext;
+import javax.persistence.TypedQuery;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,7 +18,8 @@ import com.rijai.LocationApi.repository.NotificationRepository;
 public class NotificationService implements INotificationService{
     @Autowired
     private NotificationRepository notificationRepository;
-
+    @PersistenceContext
+    private EntityManager em;
 
     @Override
     public List<Notification> findAll() {
@@ -53,6 +59,18 @@ public class NotificationService implements INotificationService{
             return null;
         else
             return (Notification) optional.get();
+    }
+
+    @Override
+    public List<Notification> getUserNotifications(String id) {
+        TypedQuery<Notification> query = em.createQuery("SELECT r FROM Notification n JOIN n.employees e WHERE e.employeeID = :employeeid", Notification.class);
+        query.setParameter("employeeid", id);
+
+        try {
+            return query.getResultList();
+        } catch (NoResultException e) {
+            return null;
+        }
     }
 
 }

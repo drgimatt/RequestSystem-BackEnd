@@ -47,4 +47,8 @@ public class NotificationController {
         notificationService.deleteNotification(id);
     }
     
+    @GetMapping("/api/notifications/{id}")
+    public List<Notification> getUserNotification(@PathVariable Long id) {
+        return notificationService.getUserNotifications(id.toString());
+    }
 }

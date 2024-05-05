@@ -12,4 +12,5 @@ public interface INotificationService {
     void deleteNotification(Long id);
     Notification findById(Long id);
     Notification getNotification(Long id);
+    List<Notification> getUserNotifications(String id);
 }
