@@ -1,14 +1,17 @@
 package com.rijai.LocationApi.service;
 
 import com.rijai.LocationApi.model.Account;
+import com.rijai.LocationApi.model.AdvisingType;
 import com.rijai.LocationApi.repository.AccountRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 
+import javax.annotation.PostConstruct;
 import javax.persistence.EntityManager;
 import javax.persistence.NoResultException;
 import javax.persistence.PersistenceContext;
@@ -20,6 +23,8 @@ public class AccountService implements IAccountService {
     private AccountRepository accountRepository;
     @PersistenceContext
     private EntityManager em;
+
+    
 
     public Account doesUserExist(String username, String password) {
         TypedQuery<Account> query = em.createQuery(

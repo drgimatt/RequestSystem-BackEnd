@@ -63,8 +63,8 @@ public class NotificationService implements INotificationService{
 
     @Override
     public List<Notification> getUserNotifications(String id) {
-        TypedQuery<Notification> query = em.createQuery("SELECT r FROM Notification n JOIN n.employees e WHERE e.employeeID = :employeeid", Notification.class);
-        query.setParameter("employeeid", id);
+        TypedQuery<Notification> query = em.createQuery("SELECT n FROM Notification n JOIN n.notifyPersons e WHERE e.employeeID = :userid", Notification.class);
+        query.setParameter("userid", id);
 
         try {
             return query.getResultList();
