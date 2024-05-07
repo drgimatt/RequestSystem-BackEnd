@@ -30,7 +30,6 @@ public abstract class Person {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long myId;    
     @Lob
-    private byte[] photo;  
     private String firstName;
     private String middleName;
     private String lastName;
